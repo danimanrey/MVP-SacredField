@@ -129,3 +129,4 @@ Nota: Solo se listan endpoints activos según `apps/backend/api/main.py`. El rou
   - GET `/api/calendario/eventos/hoy`, POST `/api/calendario/eventos`, PUT/DELETE evento, POST `/api/calendario/validar-calendario`, etc. — requieren reactivar `app.include_router(calendario.router, prefix="/api/calendario", ...)`.
 
 
+
