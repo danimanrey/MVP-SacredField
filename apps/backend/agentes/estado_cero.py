@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 from typing import List, Dict, Optional
 import uuid
 import json
@@ -10,8 +10,10 @@ from models.schemas import (
     EstadoCeroCompleto, SensacionSacral
 )
 from models.database import EstadoCeroDB
+from models.decreto_sacral import DecretoSacral  # 🏛️ Arquitectura Sagrada
 from services.claude_client import ClaudeClient
 from services.contexto import RecopiladorContexto
+from services.verificador_pilares import obtener_verificador  # 🏛️ Arquitectura Sagrada
 # from services.sumario_contexto import GestorSumarioContexto  # Archivado en Phase 3
 # from services.motor_prisma import cargar_prisma_y_configurar  # Archivado en Phase 3
 
@@ -30,15 +32,30 @@ CONFIG_PRISMA = None  # MVP usa configuración estática
 
 class AgenteEstadoCero:
     """
-    Agente Orientador Sacral
-    Facilita consulta profunda mediante preguntas binarias + chat clarificador
+    🕌 AGENTE ESTADO CERO - El Sultán (Qalb/Corazón)
+    
+    PODER LEGISLATIVO del gobierno del reino humano.
+    
+    Responsabilidades:
+    - Facilitar consulta sacral profunda
+    - RECIBIR dirección emergente
+    - EMITIR decreto claro (DecretoSacral)
+    - Validar contra 8 Pilares
+    
+    Arquitectura Sagrada:
+    - Parte de los 3 Poderes de Gobierno
+    - Precede al Ejecutivo (Orquestador)
+    - Sus decretos son ley para el reino
+    
+    Referencia: core/arquitectura/TRES_PODERES_GOBIERNO_DIVINO.md
     """
     
     def __init__(self, db: Session, claude: ClaudeClient, recopilador: RecopiladorContexto):
         self.db = db
         self.claude = claude
         self.recopilador = recopilador
-        self.gestor_sumario = GestorSumarioContexto(db, claude)
+        # self.gestor_sumario = GestorSumarioContexto(db, claude)  # Archivado
+        self.verificador_pilares = obtener_verificador()  # 🏛️ Arquitectura Sagrada
         
     async def iniciar_consulta(
         self,
@@ -323,3 +340,91 @@ Acción:"""
         self.db.commit()
         
         return accion
+    
+    async def emitir_decreto_sacral(
+        self,
+        estado_id: str,
+        momento: str = "fajr",
+        validar_pilares: bool = True
+    ) -> DecretoSacral:
+        """
+        🕌 PODER LEGISLATIVO: Emite Decreto Sacral
+        
+        El Sultán (Corazón) EMITE decreto oficial que será
+        ley para el Primer Ministro (Orquestador).
+        
+        Args:
+            estado_id: ID del Estado Cero completado
+            momento: Momento litúrgico (fajr, dhuhr, asr, maghrib, isha)
+            validar_pilares: Si True, valida contra 8 Pilares
+            
+        Returns:
+            DecretoSacral creado y guardado en DB
+        """
+        # 1. Obtener Estado Cero completado
+        estado_db = self.db.query(EstadoCeroDB).filter(
+            EstadoCeroDB.id == estado_id
+        ).first()
+        
+        if not estado_db or not estado_db.completado:
+            raise ValueError("Estado Cero no completado o no encontrado")
+        
+        # 2. Extraer dirección y acción
+        direccion_emergente = estado_db.direccion or ""
+        
+        try:
+            accion_data = json.loads(estado_db.accion or "{}")
+            accion_tangible = accion_data.get("descripcion", "")
+        except:
+            accion_tangible = ""
+        
+        if not accion_tangible:
+            raise ValueError("Acción tangible no definida")
+        
+        # 3. OPCIONAL: Validar contra 8 Pilares
+        validado_pilares = False
+        if validar_pilares:
+            decision = {
+                "accion_especifica": accion_tangible,
+                "descripcion": direccion_emergente,
+                "tipo": "creacion",  # Asumir que Estado Cero es generativo
+                "comprende_implicaciones": True  # Usuario pasó por consulta sacral
+            }
+            
+            verificacion = self.verificador_pilares.verificar_todos_pilares(decision)
+            validado_pilares = verificacion["cumple_arquitectura"]
+            
+            # Log resultado de verificación
+            print(f"🏛️ Verificación Pilares: Score {verificacion['score_global']:.1f}/100, "
+                  f"Cumple: {validado_pilares}")
+        
+        # 4. Verificar que no existe decreto para hoy
+        decreto_existente = self.db.query(DecretoSacral).filter(
+            DecretoSacral.fecha == date.today(),
+            DecretoSacral.esta_activo
+        ).first()
+        
+        if decreto_existente:
+            # Ya hay decreto activo, retornarlo
+            print(f"⚠️ Ya existe decreto activo para hoy: {decreto_existente.id}")
+            return decreto_existente
+        
+        # 5. EMITIR DECRETO SACRAL
+        decreto = DecretoSacral(
+            fecha=date.today(),
+            momento_liturgico=momento,
+            direccion_emergente=direccion_emergente,
+            accion_tangible=accion_tangible,
+            validado_contra_pilares=validado_pilares,
+            estado="pendiente"
+        )
+        
+        self.db.add(decreto)
+        self.db.commit()
+        self.db.refresh(decreto)
+        
+        print(f"🕌 DECRETO SACRAL EMITIDO: {decreto.id}")
+        print(f"   Acción: {accion_tangible}")
+        print(f"   Validado contra 8 Pilares: {validado_pilares}")
+        
+        return decreto
