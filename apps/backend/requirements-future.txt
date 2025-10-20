@@ -1,0 +1,26 @@
+# Dependencias para RAG - NO INSTALAR AÚN
+# Campo Sagrado del Entrelazador
+
+# Vector Store y Embeddings
+faiss-cpu>=1.7.4
+sentence-transformers>=2.2.0
+
+# LangChain para RAG
+langchain>=0.1.0
+langchain-community>=0.1.0
+langchain-anthropic>=0.1.0
+
+# Procesamiento de texto
+tiktoken>=0.5.0
+pypdf>=3.0.0
+python-docx>=0.8.11
+
+# Utilidades adicionales
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+# NOTA: Estas dependencias están preparadas para futuro
+# No instalar hasta que se implemente el RAG
+# 
+# Para instalar en el futuro:
+# pip install -r requirements-future.txt

@@ -1,0 +1,72 @@
+{
+  "status": "success",
+  "periodo_analisis": "1 días",
+  "timestamp": "2025-10-17T12:32:45.811924",
+  "resumen": {
+    "estados_cero_analizados": 0,
+    "dominios_analizados": 4,
+    "entrelazamientos_detectados": 3,
+    "acciones_coordinadas": 0,
+    "acciones_sistemicas": 0
+  },
+  "patrones": {
+    "error": "No hay Estados Cero suficientes para analizar"
+  },
+  "dominios": {
+    "biologico": {
+      "estado": "equilibrio",
+      "energia": 0.5,
+      "urgencia": 0.3
+    },
+    "espiritual": {
+      "estado": "equilibrio",
+      "energia": 0.5,
+      "urgencia": 0.3
+    },
+    "financiero": {
+      "estado": "equilibrio",
+      "energia": 0.5,
+      "urgencia": 0.3
+    },
+    "conocimiento": {
+      "estado": "equilibrio",
+      "energia": 0.5,
+      "urgencia": 0.3
+    }
+  },
+  "entrelazamientos": [
+    {
+      "dominios": [
+        "biologico",
+        "conocimiento"
+      ],
+      "tipo": "apoyo",
+      "intensidad": 0.5,
+      "descripcion": "Apoyo mutuo entre biologico y conocimiento"
+    },
+    {
+      "dominios": [
+        "espiritual",
+        "financiero"
+      ],
+      "tipo": "apoyo",
+      "intensidad": 0.5,
+      "descripcion": "Apoyo mutuo entre espiritual y financiero"
+    },
+    {
+      "dominios": [
+        "financiero",
+        "conocimiento"
+      ],
+      "tipo": "apoyo",
+      "intensidad": 0.5,
+      "descripcion": "Apoyo mutuo entre financiero y conocimiento"
+    }
+  ],
+  "acciones_prioritarias": [],
+  "archivos_generados": {
+    "patrones": null,
+    "entrelazamiento": "/Users/hp/Documents/CampoSagrado/Entrelazamiento-Dominios/Entrelazamiento-Dominios-2025-10-17.md",
+    "acciones": "/Users/hp/Documents/CampoSagrado/Acciones-Sistemicas/Acciones-Sistemicas-2025-10-17.md"
+  }
+}

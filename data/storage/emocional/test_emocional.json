@@ -1,0 +1,42 @@
+[
+  {
+    "timestamp": "2025-10-17T21:38:04.580667",
+    "estado": "calma",
+    "intensidad": 2,
+    "tendencia": "estable",
+    "momento_liturgico": "fajr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-17T21:38:04.580976",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-17T21:38:04.581215",
+    "estado": "entusiasmado",
+    "intensidad": 5,
+    "tendencia": "estable",
+    "momento_liturgico": "asr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-17T21:38:04.581431",
+    "estado": "abrumado",
+    "intensidad": 4,
+    "tendencia": "mejorando",
+    "momento_liturgico": "maghrib",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-17T21:38:04.581642",
+    "estado": "calma",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "isha",
+    "desencadenante": null
+  }
+]

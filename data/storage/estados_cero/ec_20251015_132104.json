@@ -1,0 +1,41 @@
+{
+  "id": "ec_20251015_132104",
+  "momento": "dhuhr",
+  "fecha": "2025-10-15",
+  "timestamp": "2025-10-15T13:21:04.923507",
+  "preguntas": [
+    {
+      "id": 0,
+      "texto": "¿Siento expansión o contracción en este momento?",
+      "respondida": false
+    },
+    {
+      "id": 1,
+      "texto": "¿Mi energía fluye hacia la creación o hacia la protección?",
+      "respondida": false
+    },
+    {
+      "id": 2,
+      "texto": "¿Mi cuerpo pide movimiento o quietud?",
+      "respondida": false
+    },
+    {
+      "id": 3,
+      "texto": "¿Mi mente busca claridad o acepta la niebla?",
+      "respondida": false
+    },
+    {
+      "id": 4,
+      "texto": "¿Mi corazón está abierto o cerrado?",
+      "respondida": false
+    },
+    {
+      "id": 5,
+      "texto": "¿Mi espíritu anhela conexión o soledad?",
+      "respondida": false
+    }
+  ],
+  "respuestas": [],
+  "completado": false,
+  "archivado_en_obsidian": false
+}

@@ -1,0 +1,43 @@
+{
+  "id": "ec_20251017_213808",
+  "momento": "isha",
+  "fecha": "2025-10-17",
+  "timestamp": "2025-10-17T21:38:08.475303",
+  "intencion": "",
+  "reflexion": "",
+  "preguntas": [
+    {
+      "id": 0,
+      "texto": "¿Mi cuerpo está listo para descansar o aún activo?",
+      "dimension": "biologico",
+      "polaridad": [
+        "activo",
+        "descansar"
+      ],
+      "respondida": false
+    },
+    {
+      "id": 1,
+      "texto": "¿Mi aprendizaje hoy fue pasivo o activo?",
+      "dimension": "conocimiento",
+      "polaridad": [
+        "pasivo",
+        "activo"
+      ],
+      "respondida": false
+    },
+    {
+      "id": 2,
+      "texto": "¿Mi corazón cierra el día en paz o inquietud?",
+      "dimension": "espiritual",
+      "polaridad": [
+        "inquietud",
+        "paz"
+      ],
+      "respondida": false
+    }
+  ],
+  "respuestas": [],
+  "completado": false,
+  "archivado_en_obsidian": false
+}

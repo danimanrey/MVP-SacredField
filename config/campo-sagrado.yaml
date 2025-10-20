@@ -1,0 +1,18 @@
+organismo:
+  nombre: "Campo Sagrado del Entrelazador"
+  version: "0.1.0-mvp"
+
+localizacion:
+  ciudad: "Madrid"
+  pais: "España"
+
+tiempo:
+  latitud: 40.4168
+  longitud: -3.7038
+  timezone: "Europe/Madrid"
+
+integraciones:
+  obsidian_vault_path: "~/Documents/CampoSagrado"
+
+
+

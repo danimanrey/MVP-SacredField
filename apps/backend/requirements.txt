@@ -1,0 +1,33 @@
+fastapi==0.111.0
+uvicorn==0.30.1
+SQLAlchemy==2.0.32
+pydantic==2.8.2
+pydantic-core==2.20.1
+pytz==2024.1
+httpx==0.27.0
+PyYAML==6.0.2
+
+# Anthropic Claude
+anthropic==0.34.0
+
+# Python dotenv
+python-dotenv==1.0.1
+
+# Google Calendar API
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+google-api-python-client==2.126.0
+
+# Cálculos astronómicos precisos
+praytimes==2.1.0
+
+# Calendario Hijri lunar preciso
+hijri-converter==2.3.2.post1
+
+# Seguridad
+PyJWT==2.9.0
+cryptography==43.0.3
+passlib==1.7.4
+python-multipart==0.0.12
+

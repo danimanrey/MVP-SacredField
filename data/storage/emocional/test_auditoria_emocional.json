@@ -1,0 +1,18 @@
+[
+  {
+    "timestamp": "2025-10-17T22:35:24.682709",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-17T22:36:44.646903",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "timestamp": "2025-10-17T22:35:24.687487",
+    "estado": "calma",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "fajr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-17T22:36:44.651981",
+    "estado": "calma",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "fajr",
+    "desencadenante": null
+  }
+]

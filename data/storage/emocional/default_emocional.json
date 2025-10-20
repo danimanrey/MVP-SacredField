@@ -1,0 +1,370 @@
+[
+  {
+    "timestamp": "2025-10-17T21:40:14.698199",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-17T22:04:44.005852",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-17T22:04:51.920678",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:03:35.357355",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:03:36.135235",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:03:37.553588",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "fajr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:03:59.992478",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:04:00.114016",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:04:01.483191",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "fajr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:04:02.802258",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "fajr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:04:03.898455",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:04:04.912047",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "asr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:04:06.001331",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "maghrib",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:04:07.074678",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "isha",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:04:08.218328",
+    "estado": "apagado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "asr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:04:09.566076",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:09:52.511907",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:09:52.634640",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:09:53.747654",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "fajr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:09:55.015207",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "fajr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:09:56.475113",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:09:57.624484",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "asr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:09:58.798474",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "maghrib",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:09:59.924878",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "isha",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:10:00.942123",
+    "estado": "apagado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "asr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:10:02.173247",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:10:08.329851",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:10:08.440469",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:10:09.461492",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "fajr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:10:10.677971",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "fajr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:10:11.993994",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:10:13.036617",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "asr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:10:14.095741",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "maghrib",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:10:15.650975",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "isha",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:10:16.980985",
+    "estado": "apagado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "asr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:10:18.289173",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:44:40.503548",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T08:44:41.523672",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T22:53:42.892244",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T22:54:35.837004",
+    "estado": "apagado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T23:10:02.106598",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T23:10:02.233978",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T23:10:45.308669",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T23:10:45.489881",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T23:13:12.516199",
+    "estado": "apagado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-18T23:13:12.567236",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  }
+]

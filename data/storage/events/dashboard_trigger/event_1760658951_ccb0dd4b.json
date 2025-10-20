@@ -1,0 +1,10 @@
+{
+  "event_id": "1760658951_ccb0dd4b",
+  "event_type": "dashboard_trigger",
+  "timestamp": "2025-10-17T01:55:51.032303",
+  "data": {
+    "fecha": "2025-10-17",
+    "tipo": "fin_dia",
+    "momento": "isha"
+  }
+}

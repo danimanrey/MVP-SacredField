@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": "2025-10-17T22:16:56.061824",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "momento_invalido",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-17T22:35:24.686616",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "momento_invalido",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-17T22:36:44.651303",
+    "estado": "neutro",
+    "intensidad": 3,
+    "tendencia": "estable",
+    "momento_liturgico": "momento_invalido",
+    "desencadenante": null
+  }
+]

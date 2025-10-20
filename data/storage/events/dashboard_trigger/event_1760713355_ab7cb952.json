@@ -1,0 +1,10 @@
+{
+  "event_id": "1760713355_ab7cb952",
+  "event_type": "dashboard_trigger",
+  "timestamp": "2025-10-17T17:02:35.071404",
+  "data": {
+    "fecha": "2025-10-17",
+    "tipo": "dia_completo",
+    "estados_cero_count": 5
+  }
+}

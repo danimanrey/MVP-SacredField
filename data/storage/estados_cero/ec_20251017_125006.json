@@ -1,0 +1,43 @@
+{
+  "id": "ec_20251017_125006",
+  "momento": "dhuhr",
+  "fecha": "2025-10-17",
+  "timestamp": "2025-10-17T12:50:06.679336",
+  "intencion": "",
+  "reflexion": "",
+  "preguntas": [
+    {
+      "id": 0,
+      "texto": "¿Mi energía está en su punto alto o necesito recarga?",
+      "dimension": "biologico",
+      "polaridad": [
+        "recarga",
+        "punto_alto"
+      ],
+      "respondida": false
+    },
+    {
+      "id": 1,
+      "texto": "¿Mis acciones fluyen hacia creación o hacia mantenimiento?",
+      "dimension": "financiero",
+      "polaridad": [
+        "mantenimiento",
+        "creacion"
+      ],
+      "respondida": false
+    },
+    {
+      "id": 2,
+      "texto": "¿Mi concentración está dispersa o enfocada?",
+      "dimension": "conocimiento",
+      "polaridad": [
+        "dispersa",
+        "enfocada"
+      ],
+      "respondida": false
+    }
+  ],
+  "respuestas": [],
+  "completado": false,
+  "archivado_en_obsidian": false
+}

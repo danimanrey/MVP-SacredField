@@ -1,0 +1,54 @@
+{
+  "id": "ec_20251015_232553",
+  "momento": "isha",
+  "fecha": "2025-10-15",
+  "timestamp": "2025-10-15T23:25:53.292856",
+  "intencion": "",
+  "reflexion": "",
+  "preguntas": [
+    {
+      "id": 0,
+      "texto": "¿Siento expansión o contracción en este momento?",
+      "respondida": false
+    },
+    {
+      "id": 1,
+      "texto": "¿Mi energía fluye hacia la creación o hacia la protección?",
+      "respondida": false
+    },
+    {
+      "id": 2,
+      "texto": "¿Mi corazón está abierto o cerrado?",
+      "respondida": false
+    }
+  ],
+  "respuestas": [
+    {
+      "pregunta_id": 0,
+      "respuesta": true,
+      "nota": "Siento una expansión suave",
+      "timestamp": "2025-10-15T23:26:27.607766"
+    },
+    {
+      "pregunta_id": 1,
+      "respuesta": false,
+      "nota": "Hacia la protección en este momento",
+      "timestamp": "2025-10-15T23:26:34.685721"
+    },
+    {
+      "pregunta_id": 2,
+      "respuesta": true,
+      "nota": "Corazón abierto pero protegido",
+      "timestamp": "2025-10-15T23:26:41.306482"
+    }
+  ],
+  "completado": true,
+  "archivado_en_obsidian": true,
+  "fecha_finalizacion": "2025-10-15T23:26:55.114316",
+  "sintesis": {
+    "tendencia": "expansión",
+    "intensidad": 0.6666666666666666,
+    "direccion_emergente": "En este momento ISHA, tu energía tiende hacia la expansión (66.7%)."
+  },
+  "archivo_path": "~/Documents/CampoSagrado/Estados-Cero/2025/10/15-isha.md"
+}

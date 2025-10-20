@@ -1,0 +1,27 @@
+{
+  "user_id": "default",
+  "no_negociables": {
+    "fajr_estado_cero": true,
+    "dhuhr_estado_cero": true,
+    "asr_estado_cero": false,
+    "maghrib_validacion": true,
+    "isha_estado_cero": false
+  },
+  "dimensiones_prioritarias": [
+    "finanzas",
+    "desarrollo"
+  ],
+  "energia_disponible": 3,
+  "contexto_financiero": {
+    "runway_meses": 12,
+    "urgencia": true
+  },
+  "contexto_biologico": {
+    "patron_sueno": "regular",
+    "nivel_energia": 3,
+    "ejercicio_regular": true
+  },
+  "expresion_libre": "Testing del sistema",
+  "fecha_creacion": "2025-10-10T11:30:16.155847",
+  "fecha_actualizacion": "2025-10-10T11:30:16.156528"
+}

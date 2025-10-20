@@ -1,0 +1,85 @@
+{
+  "id": "ec_20251015_135330",
+  "momento": "dhuhr",
+  "fecha": "2025-10-15",
+  "timestamp": "2025-10-15T13:53:30.205963",
+  "preguntas": [
+    {
+      "id": 0,
+      "texto": "¿Siento expansión o contracción en este momento?",
+      "respondida": false
+    },
+    {
+      "id": 1,
+      "texto": "¿Mi energía fluye hacia la creación o hacia la protección?",
+      "respondida": false
+    },
+    {
+      "id": 2,
+      "texto": "¿Mi cuerpo pide movimiento o quietud?",
+      "respondida": false
+    },
+    {
+      "id": 3,
+      "texto": "¿Mi mente busca claridad o acepta la niebla?",
+      "respondida": false
+    },
+    {
+      "id": 4,
+      "texto": "¿Mi corazón está abierto o cerrado?",
+      "respondida": false
+    },
+    {
+      "id": 5,
+      "texto": "¿Mi espíritu anhela conexión o soledad?",
+      "respondida": false
+    }
+  ],
+  "respuestas": [
+    {
+      "pregunta_id": 0,
+      "respuesta": false,
+      "nota": null,
+      "timestamp": "2025-10-15T13:53:32.934399"
+    },
+    {
+      "pregunta_id": 1,
+      "respuesta": true,
+      "nota": null,
+      "timestamp": "2025-10-15T13:53:41.324119"
+    },
+    {
+      "pregunta_id": 2,
+      "respuesta": true,
+      "nota": null,
+      "timestamp": "2025-10-15T13:53:43.805414"
+    },
+    {
+      "pregunta_id": 3,
+      "respuesta": true,
+      "nota": null,
+      "timestamp": "2025-10-15T13:53:46.755939"
+    },
+    {
+      "pregunta_id": 4,
+      "respuesta": true,
+      "nota": null,
+      "timestamp": "2025-10-15T13:53:50.894802"
+    },
+    {
+      "pregunta_id": 5,
+      "respuesta": true,
+      "nota": null,
+      "timestamp": "2025-10-15T13:53:52.127861"
+    }
+  ],
+  "completado": true,
+  "archivado_en_obsidian": true,
+  "fecha_finalizacion": "2025-10-15T13:53:52.138141",
+  "sintesis": {
+    "tendencia": "expansión",
+    "intensidad": 0.8333333333333334,
+    "direccion_emergente": "En este momento DHUHR, tu energía tiende hacia la expansión (83.3%)."
+  },
+  "archivo_path": "~/Documents/CampoSagrado/Estados-Cero/2025/10/15-dhuhr.md"
+}

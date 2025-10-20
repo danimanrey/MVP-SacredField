@@ -1,0 +1,54 @@
+{
+  "id": "ec_20251015_213356",
+  "momento": "isha",
+  "fecha": "2025-10-15",
+  "timestamp": "2025-10-15T21:33:56.721174",
+  "intencion": "Realizar un correcto estado cero de ishaa\n",
+  "reflexion": "",
+  "preguntas": [
+    {
+      "id": 0,
+      "texto": "¿Siento expansión o contracción en este momento?",
+      "respondida": false
+    },
+    {
+      "id": 1,
+      "texto": "¿Mi energía fluye hacia la creación o hacia la protección?",
+      "respondida": false
+    },
+    {
+      "id": 2,
+      "texto": "¿Mi corazón está abierto o cerrado?",
+      "respondida": false
+    }
+  ],
+  "respuestas": [
+    {
+      "pregunta_id": 0,
+      "respuesta": true,
+      "nota": null,
+      "timestamp": "2025-10-15T21:34:41.307595"
+    },
+    {
+      "pregunta_id": 1,
+      "respuesta": true,
+      "nota": null,
+      "timestamp": "2025-10-15T21:34:43.978869"
+    },
+    {
+      "pregunta_id": 2,
+      "respuesta": true,
+      "nota": null,
+      "timestamp": "2025-10-15T21:34:46.006975"
+    }
+  ],
+  "completado": true,
+  "archivado_en_obsidian": true,
+  "fecha_finalizacion": "2025-10-15T21:34:52.418303",
+  "sintesis": {
+    "tendencia": "expansión",
+    "intensidad": 1.0,
+    "direccion_emergente": "En este momento ISHA, tu energía tiende hacia la expansión (100.0%)."
+  },
+  "archivo_path": "~/Documents/CampoSagrado/Estados-Cero/2025/10/15-isha.md"
+}

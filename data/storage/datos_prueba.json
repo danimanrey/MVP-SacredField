@@ -1,0 +1,1527 @@
+{
+  "estados_cero": [
+    {
+      "fecha": "2025-10-02",
+      "momento": "dhuhr",
+      "contexto": {
+        "temporal": {
+          "momento_liturgico": "dhuhr",
+          "dia_semana": "Thursday",
+          "mes_hijri": "Shawwal",
+          "cualidad_momento": "Reflexión",
+          "cualidad_mes": "Celebrar"
+        },
+        "biologico": {
+          "energia_actual": 5,
+          "hrv": null,
+          "luz_solar_hoy": true,
+          "ejercicio_hoy": true
+        },
+        "financiero": {
+          "runway_meses": 10.5,
+          "urgencia_financiera": true,
+          "proyectos_activos": [
+            "MVP Campo Sagrado",
+            "Consultoría",
+            "Desarrollo Personal"
+          ]
+        },
+        "conocimiento": {
+          "capturas_sin_procesar": 6,
+          "insights_listos": 5
+        },
+        "tiempo_disponible_hoy": 210
+      },
+      "preguntas": [
+        {
+          "pregunta": "¿Te expandes al enfocarte en la acción principal hoy?",
+          "contexto": "Acción prioritaria del día",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Se siente vivo revisar finanzas 30 min ahora?",
+          "contexto": "Runway y foco",
+          "categoria": "finanzas"
+        },
+        {
+          "pregunta": "¿Tu cuerpo pide movimiento ligero 20 min ahora?",
+          "contexto": "Energía y ritmo",
+          "categoria": "biologia"
+        },
+        {
+          "pregunta": "¿Hay expansión en procesar capturas hoy?",
+          "contexto": "Metabolizar conocimiento",
+          "categoria": "conocimiento"
+        },
+        {
+          "pregunta": "¿Se siente claro un bloque profundo 90 min?",
+          "contexto": "Ritmo de trabajo",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Te expande preparar una comida nutritiva ahora?",
+          "contexto": "Biología de soporte",
+          "categoria": "biologia"
+        }
+      ],
+      "respuestas": [
+        {
+          "pregunta_id": 0,
+          "respuesta": false,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 1,
+          "respuesta": false,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 2,
+          "respuesta": false,
+          "sensacion": "contracción"
+        },
+        {
+          "pregunta_id": 3,
+          "respuesta": false,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 4,
+          "respuesta": true,
+          "sensacion": "contracción"
+        },
+        {
+          "pregunta_id": 5,
+          "respuesta": false,
+          "sensacion": "expansión"
+        }
+      ],
+      "direccion_emergente": "Priorizar bienestar biológico y descanso",
+      "accion_tangible": {
+        "titulo": "Paseo regenerativo",
+        "descripcion": "20 minutos caminando al aire libre para reset biológico",
+        "tiempo_estimado": "20min",
+        "energia_requerida": 1,
+        "deadline": "2025-10-02T16:49:55.450209"
+      },
+      "chat_clarificacion": [
+        {
+          "usuario": "¿Qué significa exactamente 'acción principal'?",
+          "asistente": "La acción principal es aquella que más te acerca a tu propósito del día. En este contexto, parece ser continuar con el desarrollo del MVP Campo Sagrado."
+        },
+        {
+          "usuario": "¿Por qué es importante el movimiento ahora?",
+          "asistente": "Tu cuerpo ha estado en modo sedentario durante las últimas horas. El movimiento ligero ayuda a resetear el sistema nervioso y mejora la concentración."
+        }
+      ],
+      "completado": true
+    },
+    {
+      "fecha": "2025-10-02",
+      "momento": "isha",
+      "contexto": {
+        "temporal": {
+          "momento_liturgico": "isha",
+          "dia_semana": "Thursday",
+          "mes_hijri": "Shawwal",
+          "cualidad_momento": "Reflexión",
+          "cualidad_mes": "Celebrar"
+        },
+        "biologico": {
+          "energia_actual": 5,
+          "hrv": null,
+          "luz_solar_hoy": false,
+          "ejercicio_hoy": true
+        },
+        "financiero": {
+          "runway_meses": 7.1,
+          "urgencia_financiera": true,
+          "proyectos_activos": [
+            "MVP Campo Sagrado",
+            "Consultoría",
+            "Desarrollo Personal"
+          ]
+        },
+        "conocimiento": {
+          "capturas_sin_procesar": 14,
+          "insights_listos": 5
+        },
+        "tiempo_disponible_hoy": 64
+      },
+      "preguntas": [
+        {
+          "pregunta": "¿Te expandes al enfocarte en la acción principal hoy?",
+          "contexto": "Acción prioritaria del día",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Se siente vivo revisar finanzas 30 min ahora?",
+          "contexto": "Runway y foco",
+          "categoria": "finanzas"
+        },
+        {
+          "pregunta": "¿Tu cuerpo pide movimiento ligero 20 min ahora?",
+          "contexto": "Energía y ritmo",
+          "categoria": "biologia"
+        },
+        {
+          "pregunta": "¿Hay expansión en procesar capturas hoy?",
+          "contexto": "Metabolizar conocimiento",
+          "categoria": "conocimiento"
+        },
+        {
+          "pregunta": "¿Se siente claro un bloque profundo 90 min?",
+          "contexto": "Ritmo de trabajo",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Te expande preparar una comida nutritiva ahora?",
+          "contexto": "Biología de soporte",
+          "categoria": "biologia"
+        }
+      ],
+      "respuestas": [
+        {
+          "pregunta_id": 0,
+          "respuesta": false,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 1,
+          "respuesta": true,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 2,
+          "respuesta": false,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 3,
+          "respuesta": false,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 4,
+          "respuesta": false,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 5,
+          "respuesta": true,
+          "sensacion": "expansión"
+        }
+      ],
+      "direccion_emergente": "Enfoque en desarrollo técnico del MVP",
+      "accion_tangible": {
+        "titulo": "Paseo regenerativo",
+        "descripcion": "20 minutos caminando al aire libre para reset biológico",
+        "tiempo_estimado": "20min",
+        "energia_requerida": 1,
+        "deadline": "2025-10-02T16:49:55.450266"
+      },
+      "chat_clarificacion": [
+        {
+          "usuario": "¿Qué significa exactamente 'acción principal'?",
+          "asistente": "La acción principal es aquella que más te acerca a tu propósito del día. En este contexto, parece ser continuar con el desarrollo del MVP Campo Sagrado."
+        },
+        {
+          "usuario": "¿Por qué es importante el movimiento ahora?",
+          "asistente": "Tu cuerpo ha estado en modo sedentario durante las últimas horas. El movimiento ligero ayuda a resetear el sistema nervioso y mejora la concentración."
+        }
+      ],
+      "completado": true
+    },
+    {
+      "fecha": "2025-10-01",
+      "momento": "dhuhr",
+      "contexto": {
+        "temporal": {
+          "momento_liturgico": "dhuhr",
+          "dia_semana": "Wednesday",
+          "mes_hijri": "Shawwal",
+          "cualidad_momento": "Reflexión",
+          "cualidad_mes": "Celebrar"
+        },
+        "biologico": {
+          "energia_actual": 5,
+          "hrv": null,
+          "luz_solar_hoy": false,
+          "ejercicio_hoy": false
+        },
+        "financiero": {
+          "runway_meses": 5.9,
+          "urgencia_financiera": true,
+          "proyectos_activos": [
+            "MVP Campo Sagrado",
+            "Consultoría",
+            "Desarrollo Personal"
+          ]
+        },
+        "conocimiento": {
+          "capturas_sin_procesar": 0,
+          "insights_listos": 1
+        },
+        "tiempo_disponible_hoy": 182
+      },
+      "preguntas": [
+        {
+          "pregunta": "¿Te expandes al enfocarte en la acción principal hoy?",
+          "contexto": "Acción prioritaria del día",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Se siente vivo revisar finanzas 30 min ahora?",
+          "contexto": "Runway y foco",
+          "categoria": "finanzas"
+        },
+        {
+          "pregunta": "¿Tu cuerpo pide movimiento ligero 20 min ahora?",
+          "contexto": "Energía y ritmo",
+          "categoria": "biologia"
+        },
+        {
+          "pregunta": "¿Hay expansión en procesar capturas hoy?",
+          "contexto": "Metabolizar conocimiento",
+          "categoria": "conocimiento"
+        },
+        {
+          "pregunta": "¿Se siente claro un bloque profundo 90 min?",
+          "contexto": "Ritmo de trabajo",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Te expande preparar una comida nutritiva ahora?",
+          "contexto": "Biología de soporte",
+          "categoria": "biologia"
+        }
+      ],
+      "respuestas": [
+        {
+          "pregunta_id": 0,
+          "respuesta": true,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 1,
+          "respuesta": false,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 2,
+          "respuesta": false,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 3,
+          "respuesta": true,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 4,
+          "respuesta": true,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 5,
+          "respuesta": false,
+          "sensacion": "expansión"
+        }
+      ],
+      "direccion_emergente": "Enfoque en desarrollo técnico del MVP",
+      "accion_tangible": {
+        "titulo": "Implementar funcionalidad de Estado Cero",
+        "descripcion": "Desarrollar 2 horas el flujo completo de Estado Cero en el frontend",
+        "tiempo_estimado": "2h",
+        "energia_requerida": 4,
+        "deadline": "2025-10-03T14:49:55.450348"
+      },
+      "chat_clarificacion": [
+        {
+          "usuario": "¿Qué significa exactamente 'acción principal'?",
+          "asistente": "La acción principal es aquella que más te acerca a tu propósito del día. En este contexto, parece ser continuar con el desarrollo del MVP Campo Sagrado."
+        },
+        {
+          "usuario": "¿Por qué es importante el movimiento ahora?",
+          "asistente": "Tu cuerpo ha estado en modo sedentario durante las últimas horas. El movimiento ligero ayuda a resetear el sistema nervioso y mejora la concentración."
+        }
+      ],
+      "completado": true
+    },
+    {
+      "fecha": "2025-10-01",
+      "momento": "fajr",
+      "contexto": {
+        "temporal": {
+          "momento_liturgico": "fajr",
+          "dia_semana": "Wednesday",
+          "mes_hijri": "Shawwal",
+          "cualidad_momento": "Reflexión",
+          "cualidad_mes": "Celebrar"
+        },
+        "biologico": {
+          "energia_actual": 3,
+          "hrv": null,
+          "luz_solar_hoy": true,
+          "ejercicio_hoy": true
+        },
+        "financiero": {
+          "runway_meses": 5.8,
+          "urgencia_financiera": false,
+          "proyectos_activos": [
+            "MVP Campo Sagrado",
+            "Consultoría",
+            "Desarrollo Personal"
+          ]
+        },
+        "conocimiento": {
+          "capturas_sin_procesar": 7,
+          "insights_listos": 4
+        },
+        "tiempo_disponible_hoy": 183
+      },
+      "preguntas": [
+        {
+          "pregunta": "¿Te expandes al enfocarte en la acción principal hoy?",
+          "contexto": "Acción prioritaria del día",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Se siente vivo revisar finanzas 30 min ahora?",
+          "contexto": "Runway y foco",
+          "categoria": "finanzas"
+        },
+        {
+          "pregunta": "¿Tu cuerpo pide movimiento ligero 20 min ahora?",
+          "contexto": "Energía y ritmo",
+          "categoria": "biologia"
+        },
+        {
+          "pregunta": "¿Hay expansión en procesar capturas hoy?",
+          "contexto": "Metabolizar conocimiento",
+          "categoria": "conocimiento"
+        },
+        {
+          "pregunta": "¿Se siente claro un bloque profundo 90 min?",
+          "contexto": "Ritmo de trabajo",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Te expande preparar una comida nutritiva ahora?",
+          "contexto": "Biología de soporte",
+          "categoria": "biologia"
+        }
+      ],
+      "respuestas": [
+        {
+          "pregunta_id": 0,
+          "respuesta": true,
+          "sensacion": "contracción"
+        },
+        {
+          "pregunta_id": 1,
+          "respuesta": true,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 2,
+          "respuesta": false,
+          "sensacion": "contracción"
+        },
+        {
+          "pregunta_id": 3,
+          "respuesta": false,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 4,
+          "respuesta": false,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 5,
+          "respuesta": false,
+          "sensacion": "expansión"
+        }
+      ],
+      "direccion_emergente": "Priorizar bienestar biológico y descanso",
+      "accion_tangible": {
+        "titulo": "Paseo regenerativo",
+        "descripcion": "20 minutos caminando al aire libre para reset biológico",
+        "tiempo_estimado": "20min",
+        "energia_requerida": 1,
+        "deadline": "2025-10-02T16:49:55.450393"
+      },
+      "chat_clarificacion": [
+        {
+          "usuario": "¿Qué significa exactamente 'acción principal'?",
+          "asistente": "La acción principal es aquella que más te acerca a tu propósito del día. En este contexto, parece ser continuar con el desarrollo del MVP Campo Sagrado."
+        },
+        {
+          "usuario": "¿Por qué es importante el movimiento ahora?",
+          "asistente": "Tu cuerpo ha estado en modo sedentario durante las últimas horas. El movimiento ligero ayuda a resetear el sistema nervioso y mejora la concentración."
+        }
+      ],
+      "completado": true
+    },
+    {
+      "fecha": "2025-09-30",
+      "momento": "maghrib",
+      "contexto": {
+        "temporal": {
+          "momento_liturgico": "maghrib",
+          "dia_semana": "Tuesday",
+          "mes_hijri": "Shawwal",
+          "cualidad_momento": "Reflexión",
+          "cualidad_mes": "Celebrar"
+        },
+        "biologico": {
+          "energia_actual": 3,
+          "hrv": null,
+          "luz_solar_hoy": true,
+          "ejercicio_hoy": false
+        },
+        "financiero": {
+          "runway_meses": 11.3,
+          "urgencia_financiera": true,
+          "proyectos_activos": [
+            "MVP Campo Sagrado",
+            "Consultoría",
+            "Desarrollo Personal"
+          ]
+        },
+        "conocimiento": {
+          "capturas_sin_procesar": 14,
+          "insights_listos": 2
+        },
+        "tiempo_disponible_hoy": 234
+      },
+      "preguntas": [
+        {
+          "pregunta": "¿Te expandes al enfocarte en la acción principal hoy?",
+          "contexto": "Acción prioritaria del día",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Se siente vivo revisar finanzas 30 min ahora?",
+          "contexto": "Runway y foco",
+          "categoria": "finanzas"
+        },
+        {
+          "pregunta": "¿Tu cuerpo pide movimiento ligero 20 min ahora?",
+          "contexto": "Energía y ritmo",
+          "categoria": "biologia"
+        },
+        {
+          "pregunta": "¿Hay expansión en procesar capturas hoy?",
+          "contexto": "Metabolizar conocimiento",
+          "categoria": "conocimiento"
+        },
+        {
+          "pregunta": "¿Se siente claro un bloque profundo 90 min?",
+          "contexto": "Ritmo de trabajo",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Te expande preparar una comida nutritiva ahora?",
+          "contexto": "Biología de soporte",
+          "categoria": "biologia"
+        }
+      ],
+      "respuestas": [
+        {
+          "pregunta_id": 0,
+          "respuesta": false,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 1,
+          "respuesta": false,
+          "sensacion": "contracción"
+        },
+        {
+          "pregunta_id": 2,
+          "respuesta": false,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 3,
+          "respuesta": false,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 4,
+          "respuesta": false,
+          "sensacion": "contracción"
+        },
+        {
+          "pregunta_id": 5,
+          "respuesta": true,
+          "sensacion": "expansión"
+        }
+      ],
+      "direccion_emergente": "Enfoque en desarrollo técnico del MVP",
+      "accion_tangible": {
+        "titulo": "Implementar funcionalidad de Estado Cero",
+        "descripcion": "Desarrollar 2 horas el flujo completo de Estado Cero en el frontend",
+        "tiempo_estimado": "2h",
+        "energia_requerida": 4,
+        "deadline": "2025-10-03T14:49:55.450461"
+      },
+      "chat_clarificacion": [
+        {
+          "usuario": "¿Qué significa exactamente 'acción principal'?",
+          "asistente": "La acción principal es aquella que más te acerca a tu propósito del día. En este contexto, parece ser continuar con el desarrollo del MVP Campo Sagrado."
+        },
+        {
+          "usuario": "¿Por qué es importante el movimiento ahora?",
+          "asistente": "Tu cuerpo ha estado en modo sedentario durante las últimas horas. El movimiento ligero ayuda a resetear el sistema nervioso y mejora la concentración."
+        }
+      ],
+      "completado": true
+    },
+    {
+      "fecha": "2025-09-30",
+      "momento": "isha",
+      "contexto": {
+        "temporal": {
+          "momento_liturgico": "isha",
+          "dia_semana": "Tuesday",
+          "mes_hijri": "Shawwal",
+          "cualidad_momento": "Reflexión",
+          "cualidad_mes": "Celebrar"
+        },
+        "biologico": {
+          "energia_actual": 4,
+          "hrv": null,
+          "luz_solar_hoy": true,
+          "ejercicio_hoy": false
+        },
+        "financiero": {
+          "runway_meses": 8.0,
+          "urgencia_financiera": false,
+          "proyectos_activos": [
+            "MVP Campo Sagrado",
+            "Consultoría",
+            "Desarrollo Personal"
+          ]
+        },
+        "conocimiento": {
+          "capturas_sin_procesar": 2,
+          "insights_listos": 1
+        },
+        "tiempo_disponible_hoy": 82
+      },
+      "preguntas": [
+        {
+          "pregunta": "¿Te expandes al enfocarte en la acción principal hoy?",
+          "contexto": "Acción prioritaria del día",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Se siente vivo revisar finanzas 30 min ahora?",
+          "contexto": "Runway y foco",
+          "categoria": "finanzas"
+        },
+        {
+          "pregunta": "¿Tu cuerpo pide movimiento ligero 20 min ahora?",
+          "contexto": "Energía y ritmo",
+          "categoria": "biologia"
+        },
+        {
+          "pregunta": "¿Hay expansión en procesar capturas hoy?",
+          "contexto": "Metabolizar conocimiento",
+          "categoria": "conocimiento"
+        },
+        {
+          "pregunta": "¿Se siente claro un bloque profundo 90 min?",
+          "contexto": "Ritmo de trabajo",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Te expande preparar una comida nutritiva ahora?",
+          "contexto": "Biología de soporte",
+          "categoria": "biologia"
+        }
+      ],
+      "respuestas": [
+        {
+          "pregunta_id": 0,
+          "respuesta": false,
+          "sensacion": "contracción"
+        },
+        {
+          "pregunta_id": 1,
+          "respuesta": false,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 2,
+          "respuesta": true,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 3,
+          "respuesta": false,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 4,
+          "respuesta": true,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 5,
+          "respuesta": true,
+          "sensacion": "neutral"
+        }
+      ],
+      "direccion_emergente": "Priorizar bienestar biológico y descanso",
+      "accion_tangible": {
+        "titulo": "Paseo regenerativo",
+        "descripcion": "20 minutos caminando al aire libre para reset biológico",
+        "tiempo_estimado": "20min",
+        "energia_requerida": 1,
+        "deadline": "2025-10-02T16:49:55.450506"
+      },
+      "chat_clarificacion": [
+        {
+          "usuario": "¿Qué significa exactamente 'acción principal'?",
+          "asistente": "La acción principal es aquella que más te acerca a tu propósito del día. En este contexto, parece ser continuar con el desarrollo del MVP Campo Sagrado."
+        },
+        {
+          "usuario": "¿Por qué es importante el movimiento ahora?",
+          "asistente": "Tu cuerpo ha estado en modo sedentario durante las últimas horas. El movimiento ligero ayuda a resetear el sistema nervioso y mejora la concentración."
+        }
+      ],
+      "completado": true
+    },
+    {
+      "fecha": "2025-09-29",
+      "momento": "maghrib",
+      "contexto": {
+        "temporal": {
+          "momento_liturgico": "maghrib",
+          "dia_semana": "Monday",
+          "mes_hijri": "Shawwal",
+          "cualidad_momento": "Reflexión",
+          "cualidad_mes": "Celebrar"
+        },
+        "biologico": {
+          "energia_actual": 2,
+          "hrv": null,
+          "luz_solar_hoy": true,
+          "ejercicio_hoy": false
+        },
+        "financiero": {
+          "runway_meses": 10.4,
+          "urgencia_financiera": true,
+          "proyectos_activos": [
+            "MVP Campo Sagrado",
+            "Consultoría",
+            "Desarrollo Personal"
+          ]
+        },
+        "conocimiento": {
+          "capturas_sin_procesar": 11,
+          "insights_listos": 3
+        },
+        "tiempo_disponible_hoy": 187
+      },
+      "preguntas": [
+        {
+          "pregunta": "¿Te expandes al enfocarte en la acción principal hoy?",
+          "contexto": "Acción prioritaria del día",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Se siente vivo revisar finanzas 30 min ahora?",
+          "contexto": "Runway y foco",
+          "categoria": "finanzas"
+        },
+        {
+          "pregunta": "¿Tu cuerpo pide movimiento ligero 20 min ahora?",
+          "contexto": "Energía y ritmo",
+          "categoria": "biologia"
+        },
+        {
+          "pregunta": "¿Hay expansión en procesar capturas hoy?",
+          "contexto": "Metabolizar conocimiento",
+          "categoria": "conocimiento"
+        },
+        {
+          "pregunta": "¿Se siente claro un bloque profundo 90 min?",
+          "contexto": "Ritmo de trabajo",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Te expande preparar una comida nutritiva ahora?",
+          "contexto": "Biología de soporte",
+          "categoria": "biologia"
+        }
+      ],
+      "respuestas": [
+        {
+          "pregunta_id": 0,
+          "respuesta": false,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 1,
+          "respuesta": false,
+          "sensacion": "contracción"
+        },
+        {
+          "pregunta_id": 2,
+          "respuesta": true,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 3,
+          "respuesta": true,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 4,
+          "respuesta": true,
+          "sensacion": "contracción"
+        },
+        {
+          "pregunta_id": 5,
+          "respuesta": false,
+          "sensacion": "contracción"
+        }
+      ],
+      "direccion_emergente": "Acelerar aspectos financieros del proyecto",
+      "accion_tangible": {
+        "titulo": "Paseo regenerativo",
+        "descripcion": "20 minutos caminando al aire libre para reset biológico",
+        "tiempo_estimado": "20min",
+        "energia_requerida": 1,
+        "deadline": "2025-10-02T16:49:55.450567"
+      },
+      "chat_clarificacion": [
+        {
+          "usuario": "¿Qué significa exactamente 'acción principal'?",
+          "asistente": "La acción principal es aquella que más te acerca a tu propósito del día. En este contexto, parece ser continuar con el desarrollo del MVP Campo Sagrado."
+        },
+        {
+          "usuario": "¿Por qué es importante el movimiento ahora?",
+          "asistente": "Tu cuerpo ha estado en modo sedentario durante las últimas horas. El movimiento ligero ayuda a resetear el sistema nervioso y mejora la concentración."
+        }
+      ],
+      "completado": true
+    },
+    {
+      "fecha": "2025-09-28",
+      "momento": "dhuhr",
+      "contexto": {
+        "temporal": {
+          "momento_liturgico": "dhuhr",
+          "dia_semana": "Sunday",
+          "mes_hijri": "Shawwal",
+          "cualidad_momento": "Reflexión",
+          "cualidad_mes": "Celebrar"
+        },
+        "biologico": {
+          "energia_actual": 5,
+          "hrv": null,
+          "luz_solar_hoy": false,
+          "ejercicio_hoy": false
+        },
+        "financiero": {
+          "runway_meses": 3.6,
+          "urgencia_financiera": false,
+          "proyectos_activos": [
+            "MVP Campo Sagrado",
+            "Consultoría",
+            "Desarrollo Personal"
+          ]
+        },
+        "conocimiento": {
+          "capturas_sin_procesar": 7,
+          "insights_listos": 8
+        },
+        "tiempo_disponible_hoy": 165
+      },
+      "preguntas": [
+        {
+          "pregunta": "¿Te expandes al enfocarte en la acción principal hoy?",
+          "contexto": "Acción prioritaria del día",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Se siente vivo revisar finanzas 30 min ahora?",
+          "contexto": "Runway y foco",
+          "categoria": "finanzas"
+        },
+        {
+          "pregunta": "¿Tu cuerpo pide movimiento ligero 20 min ahora?",
+          "contexto": "Energía y ritmo",
+          "categoria": "biologia"
+        },
+        {
+          "pregunta": "¿Hay expansión en procesar capturas hoy?",
+          "contexto": "Metabolizar conocimiento",
+          "categoria": "conocimiento"
+        },
+        {
+          "pregunta": "¿Se siente claro un bloque profundo 90 min?",
+          "contexto": "Ritmo de trabajo",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Te expande preparar una comida nutritiva ahora?",
+          "contexto": "Biología de soporte",
+          "categoria": "biologia"
+        }
+      ],
+      "respuestas": [
+        {
+          "pregunta_id": 0,
+          "respuesta": false,
+          "sensacion": "contracción"
+        },
+        {
+          "pregunta_id": 1,
+          "respuesta": false,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 2,
+          "respuesta": false,
+          "sensacion": "contracción"
+        },
+        {
+          "pregunta_id": 3,
+          "respuesta": true,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 4,
+          "respuesta": false,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 5,
+          "respuesta": false,
+          "sensacion": "expansión"
+        }
+      ],
+      "direccion_emergente": "Acelerar aspectos financieros del proyecto",
+      "accion_tangible": {
+        "titulo": "Revisión financiera semanal",
+        "descripcion": "30 minutos revisando presupuesto y runway del proyecto",
+        "tiempo_estimado": "30min",
+        "energia_requerida": 2,
+        "deadline": "2025-10-02T20:49:55.450636"
+      },
+      "chat_clarificacion": [
+        {
+          "usuario": "¿Qué significa exactamente 'acción principal'?",
+          "asistente": "La acción principal es aquella que más te acerca a tu propósito del día. En este contexto, parece ser continuar con el desarrollo del MVP Campo Sagrado."
+        },
+        {
+          "usuario": "¿Por qué es importante el movimiento ahora?",
+          "asistente": "Tu cuerpo ha estado en modo sedentario durante las últimas horas. El movimiento ligero ayuda a resetear el sistema nervioso y mejora la concentración."
+        }
+      ],
+      "completado": true
+    },
+    {
+      "fecha": "2025-09-27",
+      "momento": "maghrib",
+      "contexto": {
+        "temporal": {
+          "momento_liturgico": "maghrib",
+          "dia_semana": "Saturday",
+          "mes_hijri": "Shawwal",
+          "cualidad_momento": "Reflexión",
+          "cualidad_mes": "Celebrar"
+        },
+        "biologico": {
+          "energia_actual": 4,
+          "hrv": null,
+          "luz_solar_hoy": true,
+          "ejercicio_hoy": true
+        },
+        "financiero": {
+          "runway_meses": 6.6,
+          "urgencia_financiera": true,
+          "proyectos_activos": [
+            "MVP Campo Sagrado",
+            "Consultoría",
+            "Desarrollo Personal"
+          ]
+        },
+        "conocimiento": {
+          "capturas_sin_procesar": 12,
+          "insights_listos": 1
+        },
+        "tiempo_disponible_hoy": 69
+      },
+      "preguntas": [
+        {
+          "pregunta": "¿Te expandes al enfocarte en la acción principal hoy?",
+          "contexto": "Acción prioritaria del día",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Se siente vivo revisar finanzas 30 min ahora?",
+          "contexto": "Runway y foco",
+          "categoria": "finanzas"
+        },
+        {
+          "pregunta": "¿Tu cuerpo pide movimiento ligero 20 min ahora?",
+          "contexto": "Energía y ritmo",
+          "categoria": "biologia"
+        },
+        {
+          "pregunta": "¿Hay expansión en procesar capturas hoy?",
+          "contexto": "Metabolizar conocimiento",
+          "categoria": "conocimiento"
+        },
+        {
+          "pregunta": "¿Se siente claro un bloque profundo 90 min?",
+          "contexto": "Ritmo de trabajo",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Te expande preparar una comida nutritiva ahora?",
+          "contexto": "Biología de soporte",
+          "categoria": "biologia"
+        }
+      ],
+      "respuestas": [
+        {
+          "pregunta_id": 0,
+          "respuesta": true,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 1,
+          "respuesta": false,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 2,
+          "respuesta": false,
+          "sensacion": "contracción"
+        },
+        {
+          "pregunta_id": 3,
+          "respuesta": false,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 4,
+          "respuesta": false,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 5,
+          "respuesta": true,
+          "sensacion": "neutral"
+        }
+      ],
+      "direccion_emergente": "Priorizar bienestar biológico y descanso",
+      "accion_tangible": {
+        "titulo": "Paseo regenerativo",
+        "descripcion": "20 minutos caminando al aire libre para reset biológico",
+        "tiempo_estimado": "20min",
+        "energia_requerida": 1,
+        "deadline": "2025-10-02T16:49:55.450702"
+      },
+      "chat_clarificacion": [
+        {
+          "usuario": "¿Qué significa exactamente 'acción principal'?",
+          "asistente": "La acción principal es aquella que más te acerca a tu propósito del día. En este contexto, parece ser continuar con el desarrollo del MVP Campo Sagrado."
+        },
+        {
+          "usuario": "¿Por qué es importante el movimiento ahora?",
+          "asistente": "Tu cuerpo ha estado en modo sedentario durante las últimas horas. El movimiento ligero ayuda a resetear el sistema nervioso y mejora la concentración."
+        }
+      ],
+      "completado": true
+    },
+    {
+      "fecha": "2025-09-26",
+      "momento": "asr",
+      "contexto": {
+        "temporal": {
+          "momento_liturgico": "asr",
+          "dia_semana": "Friday",
+          "mes_hijri": "Shawwal",
+          "cualidad_momento": "Reflexión",
+          "cualidad_mes": "Celebrar"
+        },
+        "biologico": {
+          "energia_actual": 4,
+          "hrv": null,
+          "luz_solar_hoy": true,
+          "ejercicio_hoy": true
+        },
+        "financiero": {
+          "runway_meses": 7.7,
+          "urgencia_financiera": true,
+          "proyectos_activos": [
+            "MVP Campo Sagrado",
+            "Consultoría",
+            "Desarrollo Personal"
+          ]
+        },
+        "conocimiento": {
+          "capturas_sin_procesar": 3,
+          "insights_listos": 5
+        },
+        "tiempo_disponible_hoy": 153
+      },
+      "preguntas": [
+        {
+          "pregunta": "¿Te expandes al enfocarte en la acción principal hoy?",
+          "contexto": "Acción prioritaria del día",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Se siente vivo revisar finanzas 30 min ahora?",
+          "contexto": "Runway y foco",
+          "categoria": "finanzas"
+        },
+        {
+          "pregunta": "¿Tu cuerpo pide movimiento ligero 20 min ahora?",
+          "contexto": "Energía y ritmo",
+          "categoria": "biologia"
+        },
+        {
+          "pregunta": "¿Hay expansión en procesar capturas hoy?",
+          "contexto": "Metabolizar conocimiento",
+          "categoria": "conocimiento"
+        },
+        {
+          "pregunta": "¿Se siente claro un bloque profundo 90 min?",
+          "contexto": "Ritmo de trabajo",
+          "categoria": "desarrollo"
+        },
+        {
+          "pregunta": "¿Te expande preparar una comida nutritiva ahora?",
+          "contexto": "Biología de soporte",
+          "categoria": "biologia"
+        }
+      ],
+      "respuestas": [
+        {
+          "pregunta_id": 0,
+          "respuesta": false,
+          "sensacion": "contracción"
+        },
+        {
+          "pregunta_id": 1,
+          "respuesta": false,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 2,
+          "respuesta": true,
+          "sensacion": "expansión"
+        },
+        {
+          "pregunta_id": 3,
+          "respuesta": false,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 4,
+          "respuesta": true,
+          "sensacion": "neutral"
+        },
+        {
+          "pregunta_id": 5,
+          "respuesta": false,
+          "sensacion": "contracción"
+        }
+      ],
+      "direccion_emergente": "Balance entre todos los dominios",
+      "accion_tangible": {
+        "titulo": "Paseo regenerativo",
+        "descripcion": "20 minutos caminando al aire libre para reset biológico",
+        "tiempo_estimado": "20min",
+        "energia_requerida": 1,
+        "deadline": "2025-10-02T16:49:55.450759"
+      },
+      "chat_clarificacion": [
+        {
+          "usuario": "¿Qué significa exactamente 'acción principal'?",
+          "asistente": "La acción principal es aquella que más te acerca a tu propósito del día. En este contexto, parece ser continuar con el desarrollo del MVP Campo Sagrado."
+        },
+        {
+          "usuario": "¿Por qué es importante el movimiento ahora?",
+          "asistente": "Tu cuerpo ha estado en modo sedentario durante las últimas horas. El movimiento ligero ayuda a resetear el sistema nervioso y mejora la concentración."
+        }
+      ],
+      "completado": true
+    }
+  ],
+  "sesiones": [
+    {
+      "fecha": "2025-10-02",
+      "momento": "dhuhr",
+      "actividad": "Procesamiento capturas",
+      "duracion_minutos": 52,
+      "energia_inicial": 3,
+      "energia_final": 4,
+      "satisfaccion": 3,
+      "completada": false
+    },
+    {
+      "fecha": "2025-10-02",
+      "momento": "asr",
+      "actividad": "Procesamiento capturas",
+      "duracion_minutos": 98,
+      "energia_inicial": 3,
+      "energia_final": 3,
+      "satisfaccion": 3,
+      "completada": true
+    },
+    {
+      "fecha": "2025-10-02",
+      "momento": "maghrib",
+      "actividad": "Revisión financiera",
+      "duracion_minutos": 75,
+      "energia_inicial": 2,
+      "energia_final": 2,
+      "satisfaccion": 5,
+      "completada": false
+    },
+    {
+      "fecha": "2025-10-01",
+      "momento": "fajr",
+      "actividad": "Desarrollo MVP",
+      "duracion_minutos": 121,
+      "energia_inicial": 4,
+      "energia_final": 3,
+      "satisfaccion": 5,
+      "completada": false
+    },
+    {
+      "fecha": "2025-10-01",
+      "momento": "asr",
+      "actividad": "Ejercicio físico",
+      "duracion_minutos": 155,
+      "energia_inicial": 3,
+      "energia_final": 4,
+      "satisfaccion": 5,
+      "completada": false
+    },
+    {
+      "fecha": "2025-10-01",
+      "momento": "maghrib",
+      "actividad": "Procesamiento capturas",
+      "duracion_minutos": 113,
+      "energia_inicial": 2,
+      "energia_final": 5,
+      "satisfaccion": 5,
+      "completada": true
+    },
+    {
+      "fecha": "2025-09-30",
+      "momento": "dhuhr",
+      "actividad": "Procesamiento capturas",
+      "duracion_minutos": 169,
+      "energia_inicial": 5,
+      "energia_final": 3,
+      "satisfaccion": 5,
+      "completada": false
+    },
+    {
+      "fecha": "2025-09-30",
+      "momento": "maghrib",
+      "actividad": "Revisión financiera",
+      "duracion_minutos": 170,
+      "energia_inicial": 5,
+      "energia_final": 5,
+      "satisfaccion": 4,
+      "completada": true
+    },
+    {
+      "fecha": "2025-09-29",
+      "momento": "fajr",
+      "actividad": "Ejercicio físico",
+      "duracion_minutos": 49,
+      "energia_inicial": 4,
+      "energia_final": 2,
+      "satisfaccion": 5,
+      "completada": true
+    },
+    {
+      "fecha": "2025-09-29",
+      "momento": "asr",
+      "actividad": "Desarrollo MVP",
+      "duracion_minutos": 66,
+      "energia_inicial": 5,
+      "energia_final": 4,
+      "satisfaccion": 4,
+      "completada": false
+    },
+    {
+      "fecha": "2025-09-29",
+      "momento": "maghrib",
+      "actividad": "Ejercicio físico",
+      "duracion_minutos": 83,
+      "energia_inicial": 5,
+      "energia_final": 1,
+      "satisfaccion": 5,
+      "completada": false
+    },
+    {
+      "fecha": "2025-09-28",
+      "momento": "fajr",
+      "actividad": "Revisión financiera",
+      "duracion_minutos": 53,
+      "energia_inicial": 5,
+      "energia_final": 2,
+      "satisfaccion": 4,
+      "completada": true
+    },
+    {
+      "fecha": "2025-09-28",
+      "momento": "dhuhr",
+      "actividad": "Descanso regenerativo",
+      "duracion_minutos": 153,
+      "energia_inicial": 2,
+      "energia_final": 4,
+      "satisfaccion": 3,
+      "completada": false
+    },
+    {
+      "fecha": "2025-09-28",
+      "momento": "asr",
+      "actividad": "Descanso regenerativo",
+      "duracion_minutos": 92,
+      "energia_inicial": 2,
+      "energia_final": 2,
+      "satisfaccion": 4,
+      "completada": false
+    },
+    {
+      "fecha": "2025-09-27",
+      "momento": "fajr",
+      "actividad": "Procesamiento capturas",
+      "duracion_minutos": 104,
+      "energia_inicial": 4,
+      "energia_final": 4,
+      "satisfaccion": 3,
+      "completada": true
+    },
+    {
+      "fecha": "2025-09-27",
+      "momento": "dhuhr",
+      "actividad": "Descanso regenerativo",
+      "duracion_minutos": 94,
+      "energia_inicial": 5,
+      "energia_final": 1,
+      "satisfaccion": 3,
+      "completada": false
+    },
+    {
+      "fecha": "2025-09-27",
+      "momento": "asr",
+      "actividad": "Desarrollo MVP",
+      "duracion_minutos": 179,
+      "energia_inicial": 5,
+      "energia_final": 5,
+      "satisfaccion": 3,
+      "completada": true
+    },
+    {
+      "fecha": "2025-09-26",
+      "momento": "fajr",
+      "actividad": "Ejercicio físico",
+      "duracion_minutos": 31,
+      "energia_inicial": 3,
+      "energia_final": 3,
+      "satisfaccion": 5,
+      "completada": false
+    },
+    {
+      "fecha": "2025-09-26",
+      "momento": "asr",
+      "actividad": "Desarrollo MVP",
+      "duracion_minutos": 113,
+      "energia_inicial": 2,
+      "energia_final": 1,
+      "satisfaccion": 3,
+      "completada": false
+    }
+  ],
+  "no_negociables": [
+    {
+      "fecha": "2025-10-02",
+      "tipo": "biologico",
+      "nombre": "Ejercicio físico",
+      "completado": true,
+      "hora": "07:10",
+      "notas": "Caminata de 30 minutos en el parque"
+    },
+    {
+      "fecha": "2025-10-02",
+      "tipo": "espiritual",
+      "nombre": "Meditación",
+      "completado": true,
+      "hora": "06:10",
+      "notas": "10 minutos de respiración consciente"
+    },
+    {
+      "fecha": "2025-10-02",
+      "tipo": "financiero",
+      "nombre": "Revisión presupuesto",
+      "completado": false,
+      "hora": "12:15",
+      "notas": "Verificación de gastos del día"
+    },
+    {
+      "fecha": "2025-10-01",
+      "tipo": "biologico",
+      "nombre": "Ejercicio físico",
+      "completado": true,
+      "hora": "18:13",
+      "notas": "Caminata de 30 minutos en el parque"
+    },
+    {
+      "fecha": "2025-10-01",
+      "tipo": "espiritual",
+      "nombre": "Meditación",
+      "completado": false,
+      "hora": "08:19",
+      "notas": "10 minutos de respiración consciente"
+    },
+    {
+      "fecha": "2025-10-01",
+      "tipo": "financiero",
+      "nombre": "Revisión presupuesto",
+      "completado": false,
+      "hora": "14:13",
+      "notas": "Verificación de gastos del día"
+    },
+    {
+      "fecha": "2025-09-30",
+      "tipo": "biologico",
+      "nombre": "Ejercicio físico",
+      "completado": true,
+      "hora": "18:49",
+      "notas": "Caminata de 30 minutos en el parque"
+    },
+    {
+      "fecha": "2025-09-30",
+      "tipo": "espiritual",
+      "nombre": "Meditación",
+      "completado": true,
+      "hora": "08:22",
+      "notas": "10 minutos de respiración consciente"
+    },
+    {
+      "fecha": "2025-09-30",
+      "tipo": "financiero",
+      "nombre": "Revisión presupuesto",
+      "completado": false,
+      "hora": "16:06",
+      "notas": "Verificación de gastos del día"
+    },
+    {
+      "fecha": "2025-09-29",
+      "tipo": "biologico",
+      "nombre": "Ejercicio físico",
+      "completado": false,
+      "hora": "08:53",
+      "notas": "Caminata de 30 minutos en el parque"
+    },
+    {
+      "fecha": "2025-09-29",
+      "tipo": "espiritual",
+      "nombre": "Meditación",
+      "completado": true,
+      "hora": "08:16",
+      "notas": "10 minutos de respiración consciente"
+    },
+    {
+      "fecha": "2025-09-29",
+      "tipo": "financiero",
+      "nombre": "Revisión presupuesto",
+      "completado": true,
+      "hora": "14:24",
+      "notas": "Verificación de gastos del día"
+    },
+    {
+      "fecha": "2025-09-28",
+      "tipo": "biologico",
+      "nombre": "Ejercicio físico",
+      "completado": false,
+      "hora": "15:13",
+      "notas": "Caminata de 30 minutos en el parque"
+    },
+    {
+      "fecha": "2025-09-28",
+      "tipo": "espiritual",
+      "nombre": "Meditación",
+      "completado": false,
+      "hora": "07:22",
+      "notas": "10 minutos de respiración consciente"
+    },
+    {
+      "fecha": "2025-09-28",
+      "tipo": "financiero",
+      "nombre": "Revisión presupuesto",
+      "completado": true,
+      "hora": "09:18",
+      "notas": "Verificación de gastos del día"
+    },
+    {
+      "fecha": "2025-09-27",
+      "tipo": "biologico",
+      "nombre": "Ejercicio físico",
+      "completado": false,
+      "hora": "15:26",
+      "notas": "Caminata de 30 minutos en el parque"
+    },
+    {
+      "fecha": "2025-09-27",
+      "tipo": "espiritual",
+      "nombre": "Meditación",
+      "completado": true,
+      "hora": "08:45",
+      "notas": "10 minutos de respiración consciente"
+    },
+    {
+      "fecha": "2025-09-27",
+      "tipo": "financiero",
+      "nombre": "Revisión presupuesto",
+      "completado": true,
+      "hora": "15:19",
+      "notas": "Verificación de gastos del día"
+    },
+    {
+      "fecha": "2025-09-26",
+      "tipo": "biologico",
+      "nombre": "Ejercicio físico",
+      "completado": true,
+      "hora": "19:54",
+      "notas": "Caminata de 30 minutos en el parque"
+    },
+    {
+      "fecha": "2025-09-26",
+      "tipo": "espiritual",
+      "nombre": "Meditación",
+      "completado": false,
+      "hora": "06:45",
+      "notas": "10 minutos de respiración consciente"
+    },
+    {
+      "fecha": "2025-09-26",
+      "tipo": "financiero",
+      "nombre": "Revisión presupuesto",
+      "completado": false,
+      "hora": "13:14",
+      "notas": "Verificación de gastos del día"
+    }
+  ],
+  "generado_en": "2025-10-02T14:49:55.450778"
+}

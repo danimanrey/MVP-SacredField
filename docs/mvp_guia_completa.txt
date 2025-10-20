@@ -1,0 +1,279 @@
+# 🕌 MVP Campo Sagrado - Implementación Completa
+
+## ESTRUCTURA GENERAL DEL MVP
+
+Este MVP integra **TODA** la especificación anterior en un sistema funcional y ejecutable.
+
+### Componentes Core
+
+```
+campo-sagrado/
+├── backend/                    # FastAPI + Python
+│   ├── api/                   # Endpoints REST
+│   │   ├── main.py           # App principal
+│   │   ├── estado_cero.py    # Endpoints Estado Cero
+│   │   ├── orquestador.py    # Endpoints Orquestador
+│   │   └── guardian.py       # Endpoints Guardian
+│   ├── agentes/              # Los 4 agentes
+│   │   ├── estado_cero.py    # Agente Orientador Sacral
+│   │   ├── orquestador.py    # Agente Maestro Sinfonía
+│   │   ├── guardian.py       # Agente Vigilante
+│   │   └── documentador.py   # Agente Archivista
+│   ├── services/             # Servicios core
+│   │   ├── tiempos_liturgicos.py    # Cálculo tiempos rezo
+│   │   ├── calendario_hijri.py      # Sistema 13 meses
+│   │   ├── contexto.py              # Recopilación contexto
+│   │   └── claude_client.py         # Cliente Anthropic
+│   ├── models/               # Modelos de datos
+│   │   ├── schemas.py        # Pydantic schemas
+│   │   └── database.py       # SQLite + ORM
+│   ├── integraciones/        # Integraciones externas
+│   │   ├── obsidian.py       # Vault Obsidian
+│   │   └── anytype.py        # Anytype API
+│   └── scripts/              # Scripts utilidad
+│       ├── init_db.py        # Inicializar BD
+│       ├── start_agentes.py  # Iniciar agentes
+│       └── calcular_tiempos.py
+│
+├── frontend/                  # SvelteKit + TypeScript
+│   ├── src/
+│   │   ├── routes/           # Páginas
+│   │   │   ├── +page.svelte              # Dashboard principal
+│   │   │   ├── estado-cero/
+│   │   │   │   └── +page.svelte          # Interfaz Estado Cero
+│   │   │   ├── espejo-diario/
+│   │   │   │   └── +page.svelte          # Espejo del día
+│   │   │   ├── vista-semanal/
+│   │   │   │   └── +page.svelte          # Vista semanal
+│   │   │   └── vista-anual/
+│   │   │       └── +page.svelte          # Vista anual
+│   │   ├── lib/
+│   │   │   ├── components/   # Componentes UI
+│   │   │   │   ├── EstadoCero/
+│   │   │   │   │   ├── VerificacionMomento.svelte
+│   │   │   │   │   ├── ContextoDisplay.svelte
+│   │   │   │   │   ├── ConsultaSacral.svelte
+│   │   │   │   │   └── ChatClarificador.svelte
+│   │   │   │   ├── EspejoDiario/
+│   │   │   │   │   ├── JornadaCaos.svelte
+│   │   │   │   │   ├── NoNegociables.svelte
+│   │   │   │   │   └── ChatbotAclaraciones.svelte
+│   │   │   │   └── Shared/
+│   │   │   │       ├── GeometriaSagrada.svelte
+│   │   │   │       └── TiempoLiturgico.svelte
+│   │   │   ├── stores/       # Svelte stores
+│   │   │   │   ├── tiempo.ts
+│   │   │   │   ├── estadoCero.ts
+│   │   │   │   └── jornada.ts
+│   │   │   └── api/          # Cliente API
+│   │   │       └── client.ts
+│   │   └── app.css           # Estilos globales
+│   └── static/               # Assets estáticos
+│
+├── config/
+│   └── campo-sagrado.yaml    # Configuración completa
+│
+├── storage/                   # Datos persistentes
+│   ├── organismo.db          # SQLite
+│   └── chroma_db/            # Vector DB
+│
+├── docs/                      # Documentación
+│   ├── ESPECIFICACION_COMPLETA.md
+│   ├── IMPLEMENTACION_MVP.md
+│   └── GUIA_USO.md
+│
+└── scripts/                   # Scripts setup
+    ├── setup-completo.sh     # Setup todo el sistema
+    ├── iniciar-sistema.sh    # Iniciar todo
+    └── verificar-salud.sh    # Health check
+```
+
+## ORDEN DE IMPLEMENTACIÓN
+
+### Fase 1: Fundación (1-2 horas)
+1. **Estructura del proyecto** - `setup-completo.sh`
+2. **Backend base** - FastAPI + dependencias
+3. **Base de datos** - SQLite con todas las tablas
+4. **Servicios core** - Tiempos litúrgicos + Calendario Hijri
+
+### Fase 2: Agentes (2-3 horas)
+5. **Agente Estado Cero** - Consulta sacral completa
+6. **Agente Orquestador** - Plan emergente + tracking
+7. **Agente Guardian** - Monitoreo + reportes
+8. **Agente Documentador** - Generación memoria
+
+### Fase 3: API (1 hora)
+9. **Endpoints Estado Cero** - CRUD + consulta
+10. **Endpoints Orquestador** - Plan + chat
+11. **Endpoints Guardian** - Salud + métricas
+12. **WebSockets** - Updates en tiempo real
+
+### Fase 4: Frontend (3-4 horas)
+13. **Interfaz Estado Cero** - Completa con geometría sagrada
+14. **Espejo Diario** - Jornada caos + chatbot
+15. **Vista Semanal** - No-negociables + progreso
+16. **Vista Anual** - Ciclo 13 meses + intenciones
+
+### Fase 5: Integraciones (1 hora)
+17. **Obsidian** - Escritura automática vault
+18. **Anytype** - Captura con propósito (preparado)
+
+### Fase 6: Automatización (30 min)
+19. **Scripts inicio** - Levantar todo el sistema
+20. **Monitoreo** - Health checks automáticos
+
+## ARCHIVOS A CREAR (55 archivos)
+
+Voy a generar cada uno numerado secuencialmente:
+
+### Backend (25 archivos)
+- `01_backend_requirements.txt`
+- `02_backend_pyproject.toml`
+- `03_backend_env_example`
+- `04_models_schemas.py`
+- `05_models_database.py`
+- `06_services_tiempos_liturgicos.py`
+- `07_services_calendario_hijri.py`
+- `08_services_contexto.py`
+- `09_services_claude_client.py`
+- `10_agentes_estado_cero.py`
+- `11_agentes_orquestador.py`
+- `12_agentes_guardian.py`
+- `13_agentes_documentador.py`
+- `14_api_main.py`
+- `15_api_estado_cero.py`
+- `16_api_orquestador.py`
+- `17_api_guardian.py`
+- `18_api_websockets.py`
+- `19_integraciones_obsidian.py`
+- `20_integraciones_anytype.py`
+- `21_scripts_init_db.py`
+- `22_scripts_start_agentes.py`
+- `23_scripts_calcular_tiempos.py`
+- `24_scripts_test_sistema.py`
+- `25_scripts_seed_data.py`
+
+### Frontend (20 archivos)
+- `26_frontend_package.json`
+- `27_frontend_svelte_config.js`
+- `28_frontend_vite_config.ts`
+- `29_frontend_app_css`
+- `30_lib_api_client.ts`
+- `31_lib_stores_tiempo.ts`
+- `32_lib_stores_estadoCero.ts`
+- `33_lib_stores_jornada.ts`
+- `34_components_EstadoCero_VerificacionMomento.svelte`
+- `35_components_EstadoCero_ContextoDisplay.svelte`
+- `36_components_EstadoCero_ConsultaSacral.svelte`
+- `37_components_EstadoCero_ChatClarificador.svelte`
+- `38_components_EspejoDiario_JornadaCaos.svelte`
+- `39_components_EspejoDiario_NoNegociables.svelte`
+- `40_components_EspejoDiario_ChatbotAclaraciones.svelte`
+- `41_components_Shared_GeometriaSagrada.svelte`
+- `42_components_Shared_TiempoLiturgico.svelte`
+- `43_routes_page.svelte`
+- `44_routes_estado_cero_page.svelte`
+- `45_routes_espejo_diario_page.svelte`
+
+### Configuración y Scripts (10 archivos)
+- `46_config_campo_sagrado.yaml`
+- `47_scripts_setup_completo.sh`
+- `48_scripts_iniciar_sistema.sh`
+- `49_scripts_detener_sistema.sh`
+- `50_scripts_verificar_salud.sh`
+- `51_docs_ESPECIFICACION_COMPLETA.md` (ya lo tienes)
+- `52_docs_IMPLEMENTACION_MVP.md`
+- `53_docs_GUIA_USO.md`
+- `54_README.md`
+- `55_gitignore`
+
+## FLUJO DE EJECUCIÓN INMEDIATA
+
+Una vez implementado:
+
+```bash
+# 1. Setup inicial (solo primera vez)
+./scripts/setup-completo.sh
+
+# 2. Configurar API key
+nano backend/.env
+# Agregar: ANTHROPIC_API_KEY=tu_key
+
+# 3. Inicializar base de datos
+cd backend
+source venv/bin/activate
+python scripts/init_db.py
+
+# 4. Calcular tiempos de hoy
+python scripts/calcular_tiempos.py
+
+# 5. Iniciar sistema completo (3 terminales o tmux)
+./scripts/iniciar-sistema.sh
+
+# O manualmente:
+# Terminal 1: Backend
+cd backend && source venv/bin/activate && python api/main.py
+
+# Terminal 2: Frontend  
+cd frontend && pnpm dev
+
+# Terminal 3: Agentes
+cd backend && source venv/bin/activate && python scripts/start_agentes.py
+```
+
+Sistema estará en: **http://localhost:5173**
+
+## EXPERIENCIA DE USUARIO INMEDIATA
+
+Al abrir la app:
+
+1. **Dashboard principal** muestra:
+   - Momento litúrgico actual
+   - Próximo Estado Cero (con countdown)
+   - Estado del día (no-negociables, sesiones)
+   
+2. **Si es momento de Estado Cero**:
+   - Botón "✨ Iniciar Estado Cero" aparece
+   - Click → inicia consulta sacral completa
+   - 6 preguntas binarias
+   - Sentir 15seg cada una
+   - Chat clarificador
+   - Resultado: acción tangible
+   
+3. **Espejo Diario**:
+   - Jornada al borde del caos (visual no-lineal)
+   - No-negociables con tracking
+   - Chatbot para aclaraciones
+   
+4. **Al final del día** (Maghrib):
+   - Guardian genera reporte automático
+   - Aparece en Obsidian
+   - Muestra resumen del día
+
+## INTEGRACIÓN CON DOCUMENTOS ANTERIORES
+
+Este MVP implementa:
+
+✅ **Calendario Hijri 13 meses** con solsticios/equinoccios  
+✅ **Día comienza en Maghrib** (19:00 aprox)  
+✅ **5 Estados Cero diarios** en ventanas exactas  
+✅ **Consulta Sacral** con preguntas binarias + chat  
+✅ **4 Agentes**: Estado Cero, Orquestador, Guardian, Documentador  
+✅ **Jornada al borde del caos** con 40% emergencia  
+✅ **No-negociables** biológicos/espirituales/financieros  
+✅ **Espejo Diario** (no calendario)  
+✅ **Vistas Semanal/Anual** con intenciones  
+✅ **Integración Obsidian** para documentación  
+✅ **Captura Anytype** con propósito (preparado)  
+✅ **Sistema evolutivo** que aprende del uso
+
+## PRÓXIMOS PASOS
+
+Voy a generar ahora todos los 55 archivos en orden secuencial.
+
+¿Quieres que:
+1. **Genere TODOS los archivos ahora** (en múltiples artifacts)
+2. **Genere por fases** (Fase 1 completa, luego Fase 2, etc.)
+3. **Genere archivos específicos** que quieras revisar primero
+
+¿Cómo prefieres proceder?

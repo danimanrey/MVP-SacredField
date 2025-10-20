@@ -1,0 +1,77 @@
+{
+  "id": "ec_20251017_131552",
+  "momento": "dhuhr",
+  "fecha": "2025-10-17",
+  "timestamp": "2025-10-17T13:15:52.269857",
+  "intencion": "",
+  "reflexion": "",
+  "preguntas": [
+    {
+      "id": 0,
+      "texto": "¿Mi energía está en su punto alto o necesito recarga?",
+      "dimension": "biologico",
+      "polaridad": [
+        "recarga",
+        "punto_alto"
+      ],
+      "respondida": false
+    },
+    {
+      "id": 1,
+      "texto": "¿Mis acciones fluyen hacia creación o hacia mantenimiento?",
+      "dimension": "financiero",
+      "polaridad": [
+        "mantenimiento",
+        "creacion"
+      ],
+      "respondida": false
+    },
+    {
+      "id": 2,
+      "texto": "¿Mi concentración está dispersa o enfocada?",
+      "dimension": "conocimiento",
+      "polaridad": [
+        "dispersa",
+        "enfocada"
+      ],
+      "respondida": false
+    }
+  ],
+  "respuestas": [
+    {
+      "pregunta_id": 0,
+      "respuesta": false,
+      "dimension": "biologico",
+      "nota": null,
+      "timestamp": "2025-10-17T17:02:19.685734"
+    },
+    {
+      "pregunta_id": 1,
+      "respuesta": false,
+      "dimension": "financiero",
+      "nota": null,
+      "timestamp": "2025-10-17T17:02:24.871954"
+    },
+    {
+      "pregunta_id": 2,
+      "respuesta": true,
+      "dimension": "conocimiento",
+      "nota": null,
+      "timestamp": "2025-10-17T17:02:29.919893"
+    }
+  ],
+  "completado": true,
+  "archivado_en_obsidian": true,
+  "fecha_finalizacion": "2025-10-17T17:02:34.332421",
+  "sintesis": {
+    "tendencia": "contracción",
+    "intensidad": 0.6666666666666666,
+    "direccion_emergente": "En este momento DHUHR, tu energía tiende hacia la contracción (66.7%).",
+    "dominios_activos": {
+      "biologico": 0.0,
+      "financiero": 0.0,
+      "conocimiento": 1.0
+    }
+  },
+  "archivo_path": "/Users/hp/Documents/CampoSagrado/50_Proyecto_Economia/Estados_Cero/2025/10/17-dhuhr.md"
+}

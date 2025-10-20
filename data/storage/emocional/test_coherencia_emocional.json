@@ -1,0 +1,34 @@
+[
+  {
+    "timestamp": "2025-10-17T22:35:24.684944",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-17T22:35:24.685668",
+    "estado": "neutro",
+    "intensidad": 2,
+    "tendencia": "estable",
+    "momento_liturgico": "fajr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-17T22:36:44.649580",
+    "estado": "entusiasmado",
+    "intensidad": 4,
+    "tendencia": "estable",
+    "momento_liturgico": "dhuhr",
+    "desencadenante": null
+  },
+  {
+    "timestamp": "2025-10-17T22:36:44.650375",
+    "estado": "neutro",
+    "intensidad": 2,
+    "tendencia": "oscilante",
+    "momento_liturgico": "fajr",
+    "desencadenante": null
+  }
+]

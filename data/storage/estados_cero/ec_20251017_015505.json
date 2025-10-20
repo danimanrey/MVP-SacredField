@@ -1,0 +1,77 @@
+{
+  "id": "ec_20251017_015505",
+  "momento": "isha",
+  "fecha": "2025-10-17",
+  "timestamp": "2025-10-17T01:55:05.082405",
+  "intencion": "realizar un correcto estado cero\n",
+  "reflexion": "hemos de mejorar la precision de los botones y establecer un entorno aun mas inmersivo\n",
+  "preguntas": [
+    {
+      "id": 0,
+      "texto": "¿Mi cuerpo está listo para descansar o aún activo?",
+      "dimension": "biologico",
+      "polaridad": [
+        "activo",
+        "descansar"
+      ],
+      "respondida": false
+    },
+    {
+      "id": 1,
+      "texto": "¿Mi aprendizaje hoy fue pasivo o activo?",
+      "dimension": "conocimiento",
+      "polaridad": [
+        "pasivo",
+        "activo"
+      ],
+      "respondida": false
+    },
+    {
+      "id": 2,
+      "texto": "¿Mi corazón cierra el día en paz o inquietud?",
+      "dimension": "espiritual",
+      "polaridad": [
+        "inquietud",
+        "paz"
+      ],
+      "respondida": false
+    }
+  ],
+  "respuestas": [
+    {
+      "pregunta_id": 0,
+      "respuesta": true,
+      "dimension": "biologico",
+      "nota": null,
+      "timestamp": "2025-10-17T01:55:21.025284"
+    },
+    {
+      "pregunta_id": 1,
+      "respuesta": true,
+      "dimension": "conocimiento",
+      "nota": null,
+      "timestamp": "2025-10-17T01:55:24.138748"
+    },
+    {
+      "pregunta_id": 2,
+      "respuesta": false,
+      "dimension": "espiritual",
+      "nota": null,
+      "timestamp": "2025-10-17T01:55:26.653764"
+    }
+  ],
+  "completado": true,
+  "archivado_en_obsidian": true,
+  "fecha_finalizacion": "2025-10-17T01:55:48.080619",
+  "sintesis": {
+    "tendencia": "expansión",
+    "intensidad": 0.6666666666666666,
+    "direccion_emergente": "En este momento ISHA, tu energía tiende hacia la expansión (66.7%).",
+    "dominios_activos": {
+      "biologico": 1.0,
+      "conocimiento": 1.0,
+      "espiritual": 0.0
+    }
+  },
+  "archivo_path": "/Users/hp/Documents/CampoSagrado/10_Biologia_Ritmos/Estados_Cero/2025/10/17-isha.md"
+}

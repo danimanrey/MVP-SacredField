@@ -1,0 +1,50 @@
+# 🕌 Campo Sagrado del Entrelazador - Cursor Rules
+
+## Contexto del Proyecto
+Este es un organismo tecnológico-espiritual que opera al borde del caos, respetando la autoridad sacral del usuario.
+
+## Arquitectura
+- **Backend**: Python/FastAPI con 4 agentes especializados
+- **Frontend**: SvelteKit/TypeScript con geometría sagrada
+- **Base de datos**: SQLite con modelos relacionales
+- **Integraciones**: Obsidian (activa), Anytype (preparada)
+
+## Agentes del Sistema
+1. **Estado Cero** - Consulta sacral con preguntas binarias
+2. **Orquestador** - Planes emergentes al borde del caos
+3. **Guardian** - Monitoreo y reportes del sistema
+4. **Documentador** - Integración automática con Obsidian
+
+## Principios de Desarrollo
+- Respeta la autoridad sacral del usuario
+- Opera al borde del caos (40% espacio sin asignar)
+- Usa calendario Hijri de 13 meses
+- 5 Estados Cero diarios en tiempos litúrgicos
+- Geometría sagrada en la UI
+
+## Convenciones de Código
+- Usa español para comentarios y documentación
+- Mantén coherencia con la arquitectura existente
+- Prioriza la funcionalidad sobre la perfección
+- Documenta cambios importantes
+
+## Estructura de Archivos
+- `backend/agentes/` - Los 4 agentes especializados
+- `backend/api/` - Endpoints REST
+- `backend/services/` - Servicios core
+- `frontend/src/routes/` - Páginas principales
+- `frontend/src/lib/components/` - Componentes UI
+- `storage/` - Base de datos SQLite
+- `config/` - Configuraciones
+
+## Integraciones
+- **Obsidian**: Documentación automática en vault
+- **Anthropic Claude**: IA para generación de contenido
+- **Calendario Hijri**: Sistema de 13 meses
+
+## Estado Actual
+- ✅ Backend completo con agentes
+- ✅ Frontend funcional con vistas
+- ✅ Integración Obsidian activa
+- ✅ Base de datos operativa
+- 🔄 Componentes UI en desarrollo

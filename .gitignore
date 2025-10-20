@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv
+
+# FastAPI
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+/tmp/
+
+# Environment
+.env
+.env.local
+*.env
+
+# Frontend
+node_modules/
+.svelte-kit/
+build/
+dist/
+.vite/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Obsidian
+.obsidian/
+
+# Temporal
+storage/*.db
+/tmp/
+*.backup
+
+# Next.js (para la nueva versión)
+.next/
+out/
+dashboard/node_modules/
+
+# === Archivos de sistema macOS ===
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# === Backups y migración Git ===
+.git-backup-*
+*.bundle
+git-status-backup.txt

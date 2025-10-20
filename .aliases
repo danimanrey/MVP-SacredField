@@ -1,0 +1,29 @@
+# Aliases for Campo Sagrado project
+# cd to project root
+alias cs='cd "$HOME/Campo sagrado MVP"'
+# Start the organism (if script exists)
+alias inicio='[ -x "$HOME/Campo sagrado MVP/backend/scripts/inicio_diario.sh" ] && "$HOME/Campo sagrado MVP/backend/scripts/inicio_diario.sh" || echo "No inicio script found"'
+# Open project README
+alias espejo='open "$HOME/Campo sagrado MVP/docs/ESPEJO_DIARIO.md" 2>/dev/null || echo "Espejo not found"'
+alias salud='echo "Run health checks: backend logs or systemctl (custom)"'
+# Map claude-code to the installed 'claude' binary
+alias claude-code='claude'
+
+# cccs: cd to project and run claude in project context
+cccs() {
+  # Ensure we use nvm's node if available
+  if [ -s "$NVM_DIR/nvm.sh" ]; then
+    # shellcheck source=/dev/null
+    . "$NVM_DIR/nvm.sh"
+  fi
+  cd "$HOME/Campo sagrado MVP" || return 1
+  # Run the claude binary from nvm if present, otherwise rely on PATH
+  if [ -x "$NVM_DIR/versions/node/$(nvm current)/bin/claude" ] 2>/dev/null; then
+    "$NVM_DIR/versions/node/$(nvm current)/bin/claude" "$@"
+  elif command -v claude >/dev/null 2>&1; then
+    claude "$@"
+  else
+    echo "claude CLI not found. Try: npm install -g @anthropic-ai/claude-code (or ensure nvm is loaded)."
+    return 127
+  fi
+}

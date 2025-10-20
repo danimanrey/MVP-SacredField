@@ -1,0 +1,24 @@
+{
+  "name": "Campo Sagrado del Entrelazador",
+  "version": "1.0.0-mvp",
+  "description": "Organismo tecnológico-espiritual para conocimiento personal",
+  "directories": {
+    "backend": "backend/",
+    "frontend": "campo-sagrado-nextjs/",
+    "vault": "~/Documents/CampoSagrado/",
+    "docs": "docs/"
+  },
+  "key_files": [
+    "backend/api/main.py",
+    "backend/agentes/estado_cero.py",
+    "backend/services/tiempos_liturgicos.py",
+    "campo-sagrado-nextjs/app/estado-cero-inmersivo/page.tsx",
+    ".claude-code/context.md"
+  ],
+  "principles": [
+    "Soberanía Total",
+    "Consistencia Brutal",
+    "Simplicidad Elegante",
+    "Anti-Fragilidad"
+  ]
+}
