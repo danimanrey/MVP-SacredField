@@ -401,7 +401,7 @@ Acción:"""
         # 4. Verificar que no existe decreto para hoy
         decreto_existente = self.db.query(DecretoSacral).filter(
             DecretoSacral.fecha == date.today(),
-            DecretoSacral.esta_activo
+            DecretoSacral.estado.in_(["pendiente", "en_ejecucion"])
         ).first()
         
         if decreto_existente:

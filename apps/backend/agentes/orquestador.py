@@ -92,7 +92,7 @@ class AgenteOrquestador:
         """
         decreto = self.db.query(DecretoSacral).filter(
             DecretoSacral.fecha == date.today(),
-            DecretoSacral.esta_activo
+            DecretoSacral.estado.in_(["pendiente", "en_ejecucion"])
         ).first()
         
         if not decreto:
@@ -133,25 +133,25 @@ class AgenteOrquestador:
             "soberania"   # Autonomía, decisiones
         ]
         
-        for ministerio_id in ministerios_a_consultar:
-            try:
-                # Contexto para el ministerio
-                contexto = {
-                    "decreto_id": decreto.id,
-                    "accion": decreto.accion_tangible,
-                    "direccion": decreto.direccion_emergente,
-                    "momento": decreto.momento_liturgico
-                }
-                
-                # Consultar ministerio
-                reporte = self.gabinete.consultar_ministerio(ministerio_id, contexto)
-                reportes[ministerio_id] = reporte
-                
-                print(f"   ✅ {ministerio_id.upper()}: {reporte.get('estado', 'OK')}")
-                
-            except Exception as e:
-                print(f"   ⚠️ {ministerio_id.upper()}: Error - {e}")
-                reportes[ministerio_id] = {"error": str(e)}
+        # Convocar reunión ministerial (todos a la vez)
+        try:
+            resultado = self.gabinete.reunion_ministerial(decreto)
+            reportes = resultado.get("reportes", {})
+            
+            print(f"   Ministerios consultados: {resultado.get('ministerios_activos', 0)}")
+            print(f"   Salud global: {resultado.get('salud_global', 0):.1f}/100")
+            print(f"   Conflictos detectados: {len(resultado.get('conflictos', []))}")
+            
+            # Mostrar reporte de cada ministerio
+            for ministerio_id, reporte in reportes.items():
+                if "error" in reporte:
+                    print(f"   ⚠️ {ministerio_id.upper()}: {reporte['error']}")
+                else:
+                    print(f"   ✅ {ministerio_id.upper()}: OK")
+                    
+        except Exception as e:
+            print(f"   ⚠️ ERROR en reunión ministerial: {e}")
+            reportes = {"error_general": str(e)}
         
         return reportes
     
@@ -212,7 +212,12 @@ class AgenteOrquestador:
         TODO: Usar reportes ministeriales para ajustar bloques.
         """
         # Calcular tiempos litúrgicos
-        tiempos = self.calculador_tiempos.calcular_tiempos_dia()
+        tiempos_dia = self.calculador_tiempos.calcular_tiempos_hoy()
+        tiempos = {
+            "fajr": tiempos_dia.fajr.inicio,
+            "dhuhr": tiempos_dia.dhuhr.inicio,
+            "maghrib": tiempos_dia.maghrib.inicio
+        }
         
         # Bloques básicos del día
         bloques = [
@@ -264,9 +269,17 @@ class AgenteOrquestador:
         # - Si Ministerio Capital necesita acción → añadir revisión financiera
         # - etc.
         
+        # Crear AccionConcreta desde el decreto
+        accion_principal = AccionConcreta(
+            descripcion=decreto.accion_tangible,
+            resultado_observable="Decreto ejecutado",
+            duracion_estimada="Variable",
+            energia_requerida=4
+        )
+        
         return JornadaAlBordeCaos(
             fecha=date.today(),
-            accion_principal=decreto.accion_tangible,
+            accion_principal=accion_principal,
             bloques_sugeridos=bloques,
             puntos_decision=[],
             espacio_emergencia=40.0,  # Borde del caos

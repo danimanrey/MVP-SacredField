@@ -49,7 +49,7 @@ class AgenteGuardian:
         # 1. Obtener decreto del día (si existe)
         decreto = self.db.query(DecretoSacral).filter(
             DecretoSacral.fecha == fecha,
-            DecretoSacral.esta_activo
+            DecretoSacral.estado.in_(["pendiente", "en_ejecucion"])
         ).first()
         
         # Recopilar datos del día
@@ -74,12 +74,26 @@ class AgenteGuardian:
         semilla = "Continúa honrando tu autoridad sacral"
         
         if isinstance(contenido, dict):
-            resonancias = contenido.get("resonancias", ["Sistema funcionando correctamente"])
-            obstrucciones = contenido.get("obstrucciones", ["Ninguna obstrucción detectada"])
+            resonancias_raw = contenido.get("resonancias", ["Sistema funcionando correctamente"])
+            obstrucciones_raw = contenido.get("obstrucciones", ["Ninguna obstrucción detectada"])
             semilla = contenido.get("semilla", "Continúa honrando tu autoridad sacral")
+            
+            # Convertir a strings si son dicts (mock de Claude a veces retorna dicts)
+            resonancias = [
+                r if isinstance(r, str) else r.get("pregunta", str(r))
+                for r in resonancias_raw
+            ]
+            obstrucciones = [
+                o if isinstance(o, str) else o.get("pregunta", str(o))
+                for o in obstrucciones_raw
+            ]
         elif isinstance(contenido, list):
             # Si es una lista, usar como resonancias
-            resonancias = contenido[:3]  # Tomar las primeras 3
+            resonancias_raw = contenido[:3]  # Tomar las primeras 3
+            resonancias = [
+                r if isinstance(r, str) else r.get("pregunta", str(r))
+                for r in resonancias_raw
+            ]
             obstrucciones = ["Sistema operativo"]
         
         # 4. REGISTRAR verificación en decreto (si existe)
