@@ -84,7 +84,7 @@ calendario = CalendarioHijri()
 
 # Incluir routers de agentes
 try:
-    from api import estado_cero, orquestador, guardian, vistas_temporales, manifestaciones, octavas, universo_imaginal, configuracion, gobierno, pilares
+    from api import estado_cero, orquestador, guardian, vistas_temporales, manifestaciones, octavas, universo_imaginal, configuracion, gobierno, pilares, arquitectura_sagrada
     
 # ===== CORE ROUTERS (MVP) =====
 app.include_router(estado_cero.router, prefix="/api/estado-cero", tags=["Estado Cero"])
@@ -101,6 +101,9 @@ app.include_router(gobierno.router, prefix="/api/gobierno", tags=["🏛️ Gobie
 
 # ===== ARQUITECTURA SAGRADA: 8 PILARES FUNDAMENTALES =====
 app.include_router(pilares.router, prefix="/api/pilares", tags=["🏛️ Pilares: Verificación"])
+
+# ===== ARQUITECTURA SAGRADA: DASHBOARD COMPLETO =====
+app.include_router(arquitectura_sagrada.router, prefix="/api/arquitectura-sagrada", tags=["🕌 Arquitectura Sagrada"])
     
     # ===== V2.0 ROUTERS (dependen de agentes archivados) =====
     # from api import entrelazamiento, ritual_maghrib, estructura, espejo_diario
