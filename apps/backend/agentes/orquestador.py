@@ -9,6 +9,7 @@ from models.schemas import (
     BloqueTiempo, PuntoDecision, NoNegociable, TipoNoNegociable,
     EstructuraDia, AnclaDia
 )
+from models.decreto_sacral import DecretoSacral  # 🏛️ Arquitectura Sagrada
 from services.claude_client import ClaudeClient
 from services.tiempos_liturgicos import CalculadorTiemposLiturgicos
 
@@ -78,6 +79,201 @@ class AgenteOrquestador:
         except Exception as e:
             # Si falla, continuar sin ministerios (backwards compatibility)
             print(f"⚠️ No se pudieron registrar ministerios: {e}")
+    
+    def obtener_decreto_activo(self) -> Optional[DecretoSacral]:
+        """
+        🏛️ PODER EJECUTIVO: Verifica decreto del Sultán
+        
+        El Primer Ministro NO puede actuar sin decreto.
+        Esta es la base de los 3 Poderes de Gobierno.
+        
+        Returns:
+            DecretoSacral activo para hoy, o None si no existe
+        """
+        decreto = self.db.query(DecretoSacral).filter(
+            DecretoSacral.fecha == date.today(),
+            DecretoSacral.esta_activo
+        ).first()
+        
+        if not decreto:
+            print("⚠️ NO HAY DECRETO SACRAL - Primer Ministro no puede actuar")
+            return None
+        
+        if decreto.estado != "pendiente":
+            print(f"ℹ️ Decreto ya {decreto.estado}: {decreto.id}")
+        
+        return decreto
+    
+    async def consultar_gabinete_ministerial(self, decreto: DecretoSacral) -> Dict[str, Any]:
+        """
+        🏛️ CONSULTA CON LOS 7 MINISTERIOS
+        
+        El Primer Ministro consulta con su gabinete para ejecutar
+        el decreto del Sultán.
+        
+        Args:
+            decreto: DecretoSacral a ejecutar
+            
+        Returns:
+            Dict con reportes de cada ministerio consultado
+        """
+        print(f"\n🏛️ GABINETE MINISTERIAL - Consulta para decreto {decreto.id}")
+        print(f"   Acción: {decreto.accion_tangible}")
+        
+        # Consultar cada ministerio
+        reportes = {}
+        
+        ministerios_a_consultar = [
+            "mente",      # Estado mental, tareas cognitivas
+            "cuerpo",     # Energía, deporte, sueño
+            "capital",    # Recursos financieros
+            "conexion",   # Relaciones, comunicación
+            "creacion",   # Proyectos creativos
+            "significado",# Propósito, trascendencia
+            "soberania"   # Autonomía, decisiones
+        ]
+        
+        for ministerio_id in ministerios_a_consultar:
+            try:
+                # Contexto para el ministerio
+                contexto = {
+                    "decreto_id": decreto.id,
+                    "accion": decreto.accion_tangible,
+                    "direccion": decreto.direccion_emergente,
+                    "momento": decreto.momento_liturgico
+                }
+                
+                # Consultar ministerio
+                reporte = self.gabinete.consultar_ministerio(ministerio_id, contexto)
+                reportes[ministerio_id] = reporte
+                
+                print(f"   ✅ {ministerio_id.upper()}: {reporte.get('estado', 'OK')}")
+                
+            except Exception as e:
+                print(f"   ⚠️ {ministerio_id.upper()}: Error - {e}")
+                reportes[ministerio_id] = {"error": str(e)}
+        
+        return reportes
+    
+    async def ejecutar_decreto(self, decreto_id: str) -> JornadaAlBordeCaos:
+        """
+        🏛️ PODER EJECUTIVO: Ejecuta Decreto del Sultán
+        
+        Flujo completo:
+        1. Verificar que existe decreto
+        2. Consultar Gabinete Ministerial
+        3. Organizar jornada al borde del caos
+        4. Marcar decreto como "en_ejecucion"
+        
+        Args:
+            decreto_id: ID del DecretoSacral a ejecutar
+            
+        Returns:
+            JornadaAlBordeCaos planificada
+        """
+        # 1. Obtener decreto
+        decreto = self.db.query(DecretoSacral).filter(
+            DecretoSacral.id == decreto_id
+        ).first()
+        
+        if not decreto:
+            raise ValueError(f"Decreto {decreto_id} no encontrado")
+        
+        if not decreto.validado_contra_pilares:
+            print("⚠️ Decreto NO validado contra 8 Pilares (ejecutando de todos modos)")
+        
+        # 2. Consultar Gabinete Ministerial
+        reportes_ministeriales = await self.consultar_gabinete_ministerial(decreto)
+        
+        # 3. Generar plan basándose en decreto + reportes
+        plan = await self._generar_plan_desde_decreto(decreto, reportes_ministeriales)
+        
+        # 4. Marcar decreto como en ejecución
+        decreto.estado = "en_ejecucion"
+        self.db.commit()
+        
+        print(f"\n🎼 ORQUESTADOR: Plan generado para decreto {decreto.id}")
+        print(f"   {len(plan.bloques_sugeridos)} bloques organizados")
+        print(f"   {plan.espacio_emergencia}% espacio emergente")
+        
+        return plan
+    
+    async def _generar_plan_desde_decreto(
+        self,
+        decreto: DecretoSacral,
+        reportes: Dict[str, Any]
+    ) -> JornadaAlBordeCaos:
+        """
+        Genera JornadaAlBordeCaos basándose en:
+        - DecretoSacral (dirección + acción)
+        - Reportes de los 7 Ministerios
+        
+        Por ahora genera plan básico.
+        TODO: Usar reportes ministeriales para ajustar bloques.
+        """
+        # Calcular tiempos litúrgicos
+        tiempos = self.calculador_tiempos.calcular_tiempos_dia()
+        
+        # Bloques básicos del día
+        bloques = [
+            BloqueTiempo(
+                id=str(uuid.uuid4()),
+                inicio_aprox=tiempos["fajr"].strftime("%H:%M"),
+                duracion="15min",
+                actividad="🕌 FAJR - Rezo + Estado Cero",
+                rol="Ancla sagrada",
+                energia_optima=2,
+                flexible=False,
+                opciones_alternativas=[]
+            ),
+            BloqueTiempo(
+                id=str(uuid.uuid4()),
+                inicio_aprox="09:00",
+                duracion="120min",
+                actividad=f"⚡ ACCIÓN PRINCIPAL: {decreto.accion_tangible}",
+                rol="Ejecución del decreto",
+                energia_optima=4,
+                flexible=True,
+                opciones_alternativas=["Mover a 10:00", "Mover a 11:00"]
+            ),
+            BloqueTiempo(
+                id=str(uuid.uuid4()),
+                inicio_aprox=tiempos["dhuhr"].strftime("%H:%M"),
+                duracion="15min",
+                actividad="🕌 DHUHR - Rezo + Revisión",
+                rol="Ancla sagrada",
+                energia_optima=3,
+                flexible=False,
+                opciones_alternativas=[]
+            ),
+            BloqueTiempo(
+                id=str(uuid.uuid4()),
+                inicio_aprox=tiempos["maghrib"].strftime("%H:%M"),
+                duracion="30min",
+                actividad="🕌 MAGHRIB - Integración diaria",
+                rol="Ancla sagrada",
+                energia_optima=2,
+                flexible=False,
+                opciones_alternativas=[]
+            )
+        ]
+        
+        # TODO: Usar reportes ministeriales para añadir bloques específicos
+        # Por ejemplo:
+        # - Si Ministerio Cuerpo reporta baja energía → añadir siesta
+        # - Si Ministerio Capital necesita acción → añadir revisión financiera
+        # - etc.
+        
+        return JornadaAlBordeCaos(
+            fecha=date.today(),
+            accion_principal=decreto.accion_tangible,
+            bloques_sugeridos=bloques,
+            puntos_decision=[],
+            espacio_emergencia=40.0,  # Borde del caos
+            no_negociables=[],
+            flexible=True,
+            ultima_actualizacion=datetime.now()
+        )
     
     async def actualizar_espejo_con_estado_cero(
         self,
