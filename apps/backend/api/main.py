@@ -86,15 +86,18 @@ calendario = CalendarioHijri()
 try:
     from api import estado_cero, orquestador, guardian, vistas_temporales, manifestaciones, octavas, universo_imaginal, configuracion
     
-    # ===== CORE ROUTERS (MVP) =====
-    app.include_router(estado_cero.router, prefix="/api/estado-cero", tags=["Estado Cero"])
-    app.include_router(orquestador.router, prefix="/api/orquestador", tags=["Orquestador"])
-    app.include_router(guardian.router, prefix="/api/guardian", tags=["Guardian"])
-    app.include_router(vistas_temporales.router, prefix="/api", tags=["Vistas Temporales"])
-    app.include_router(manifestaciones.router, prefix="/api/manifestaciones", tags=["Manifestaciones"])
-    app.include_router(octavas.router, prefix="/api/octavas", tags=["Ley de la Octava"])
-    # app.include_router(universo_imaginal.router, prefix="/api/universo-imaginal", tags=["Universo Imaginal"])  # Depende de universo_processor (Phase 3)
-    app.include_router(configuracion.router, prefix="/api/configuracion", tags=["Configuración"])
+# ===== CORE ROUTERS (MVP) =====
+app.include_router(estado_cero.router, prefix="/api/estado-cero", tags=["Estado Cero"])
+app.include_router(orquestador.router, prefix="/api/orquestador", tags=["Orquestador"])
+app.include_router(guardian.router, prefix="/api/guardian", tags=["Guardian"])
+app.include_router(vistas_temporales.router, prefix="/api", tags=["Vistas Temporales"])
+app.include_router(manifestaciones.router, prefix="/api/manifestaciones", tags=["Manifestaciones"])
+app.include_router(octavas.router, prefix="/api/octavas", tags=["Ley de la Octava"])
+# app.include_router(universo_imaginal.router, prefix="/api/universo-imaginal", tags=["Universo Imaginal"])  # Depende de universo_processor (Phase 3)
+app.include_router(configuracion.router, prefix="/api/configuracion", tags=["Configuración"])
+
+# ===== ARQUITECTURA SAGRADA: 3 PODERES DE GOBIERNO =====
+app.include_router(gobierno.router, prefix="/api/gobierno", tags=["🏛️ Gobierno: 3 Poderes"])
     
     # ===== V2.0 ROUTERS (dependen de agentes archivados) =====
     # from api import entrelazamiento, ritual_maghrib, estructura, espejo_diario
