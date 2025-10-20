@@ -93,7 +93,7 @@ try:
     app.include_router(vistas_temporales.router, prefix="/api", tags=["Vistas Temporales"])
     app.include_router(manifestaciones.router, prefix="/api/manifestaciones", tags=["Manifestaciones"])
     app.include_router(octavas.router, prefix="/api/octavas", tags=["Ley de la Octava"])
-    app.include_router(universo_imaginal.router, prefix="/api/universo-imaginal", tags=["Universo Imaginal"])
+    # app.include_router(universo_imaginal.router, prefix="/api/universo-imaginal", tags=["Universo Imaginal"])  # Depende de universo_processor (Phase 3)
     app.include_router(configuracion.router, prefix="/api/configuracion", tags=["Configuración"])
     
     # ===== V2.0 ROUTERS (dependen de agentes archivados) =====

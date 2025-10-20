@@ -19,8 +19,9 @@ from models.ley_octava import (
 
 router = APIRouter()
 
-# Gestor global (en producción sería persistente en DB)
-gestor = GestorOctavas()
+# Gestor global (deshabilitado en MVP, feature v2.0)
+# gestor = GestorOctavas()
+gestor = None  # MVP: endpoints retornan datos estáticos/modelo
 
 
 class CrearObjetivoRequest(BaseModel):
