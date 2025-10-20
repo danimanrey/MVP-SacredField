@@ -17,7 +17,7 @@ from services.motor_prisma import cargar_prisma_y_configurar
 
 # Importar el entrelazador para recomendaciones personalizadas
 try:
-    from agentes.entrelazador import agente_entrelazador
+    # from agentes.entrelazador import agente_entrelazador  # Archivado en Phase 2
     ENTRELAZADOR_DISPONIBLE = True
 except:
     ENTRELAZADOR_DISPONIBLE = False
