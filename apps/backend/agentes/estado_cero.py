@@ -12,19 +12,20 @@ from models.schemas import (
 from models.database import EstadoCeroDB
 from services.claude_client import ClaudeClient
 from services.contexto import RecopiladorContexto
-from services.sumario_contexto import GestorSumarioContexto
-from services.motor_prisma import cargar_prisma_y_configurar
+# from services.sumario_contexto import GestorSumarioContexto  # Archivado en Phase 3
+# from services.motor_prisma import cargar_prisma_y_configurar  # Archivado en Phase 3
 
 # Importar el entrelazador para recomendaciones personalizadas
 try:
-    from agentes.entrelazador import agente_entrelazador
+    # from agentes.entrelazador import agente_entrelazador  # Archivado en Phase 2
     ENTRELAZADOR_DISPONIBLE = True
 except:
     ENTRELAZADOR_DISPONIBLE = False
 
-# Cargar configuración del prisma
-motor_prisma_global = cargar_prisma_y_configurar()
-CONFIG_PRISMA = motor_prisma_global.configurar_estado_cero() if motor_prisma_global else None
+# Cargar configuración del prisma (archivado en Phase 3, usar config estática)
+# motor_prisma_global = cargar_prisma_y_configurar()
+# CONFIG_PRISMA = motor_prisma_global.configurar_estado_cero() if motor_prisma_global else None
+CONFIG_PRISMA = None  # MVP usa configuración estática
 
 
 class AgenteEstadoCero:

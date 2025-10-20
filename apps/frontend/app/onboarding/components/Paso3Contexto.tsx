@@ -40,7 +40,7 @@ export default function Paso3Contexto({ onSiguiente, onAnterior }: Paso3Contexto
   const toggleDimension = (dimensionId: string) => {
     const actual = configuracion.dimensiones_prioritarias || []
     if (actual.includes(dimensionId)) {
-      setDimensiones(actual.filter(d => d !== dimensionId))
+      setDimensiones(actual.filter((d: string) => d !== dimensionId))
     } else {
       setDimensiones([...actual, dimensionId])
     }

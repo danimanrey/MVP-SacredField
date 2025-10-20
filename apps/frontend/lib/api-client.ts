@@ -189,3 +189,82 @@ export const contextoAPI = {
   }
 }
 
+/**
+ * Tipo para Dimensión de configuración
+ */
+export interface Dimension {
+  id: string
+  nombre: string
+  descripcion?: string
+  color?: string
+  emoji?: string
+}
+
+/**
+ * Tipos para Configuración Individual
+ */
+export interface NoNegociables {
+  fajr_estado_cero: boolean
+  dhuhr_estado_cero: boolean
+  asr_estado_cero: boolean
+  maghrib_validacion: boolean
+  isha_estado_cero: boolean
+}
+
+export interface ContextoFinanciero {
+  runway_meses: number
+  urgencia: boolean
+}
+
+export interface ContextoBiologico {
+  patron_sueno: string
+  nivel_energia: number
+  ejercicio_regular: boolean
+}
+
+export interface ConfiguracionIndividual {
+  user_id?: string
+  no_negociables: NoNegociables
+  dimensiones_prioritarias: string[]
+  energia_disponible: number
+  contexto_financiero: ContextoFinanciero
+  contexto_biologico: ContextoBiologico
+  expresion_libre?: string
+}
+
+/**
+ * API de Configuración
+ */
+export const configuracionAPI = {
+  /**
+   * Obtener configuración del usuario
+   */
+  async obtener(): Promise<Record<string, unknown>> {
+    const res = await fetch(`${API_BASE}/configuracion`)
+    if (!res.ok) throw new Error('Error obteniendo configuración')
+    return res.json()
+  },
+
+  /**
+   * Guardar configuración del usuario
+   */
+  async guardar(configuracion: ConfiguracionIndividual | Record<string, unknown>): Promise<{ success: boolean }> {
+    const res = await fetch(`${API_BASE}/configuracion`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(configuracion)
+    })
+    if (!res.ok) throw new Error('Error guardando configuración')
+    return res.json()
+  },
+
+  /**
+   * Obtener dimensiones disponibles
+   */
+  async obtenerDimensiones(): Promise<Dimension[]> {
+    const res = await fetch(`${API_BASE}/configuracion/dimensiones`)
+    if (!res.ok) throw new Error('Error obteniendo dimensiones')
+    return res.json()
+  }
+}
+

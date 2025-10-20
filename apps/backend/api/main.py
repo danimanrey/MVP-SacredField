@@ -84,23 +84,30 @@ calendario = CalendarioHijri()
 
 # Incluir routers de agentes
 try:
-    from api import estado_cero, orquestador, guardian, entrelazamiento, ritual_maghrib, estructura, espejo_diario, vistas_temporales, manifestaciones, octavas, universo_imaginal, configuracion
-    # from api import calendario  # Temporalmente comentado hasta arreglar GoogleCalendarService
+    from api import estado_cero, orquestador, guardian, vistas_temporales, manifestaciones, octavas, universo_imaginal, configuracion
     
+    # ===== CORE ROUTERS (MVP) =====
     app.include_router(estado_cero.router, prefix="/api/estado-cero", tags=["Estado Cero"])
     app.include_router(orquestador.router, prefix="/api/orquestador", tags=["Orquestador"])
     app.include_router(guardian.router, prefix="/api/guardian", tags=["Guardian"])
-    app.include_router(entrelazamiento.router, prefix="/api", tags=["Entrelazamiento"])
-    app.include_router(ritual_maghrib.router, prefix="/api/maghrib", tags=["Ritual Maghrib"])
-    app.include_router(estructura.router, prefix="/api/estructura", tags=["Estructura"])
-    app.include_router(espejo_diario.router, prefix="/api/espejo-diario", tags=["Espejo Diario"])
     app.include_router(vistas_temporales.router, prefix="/api", tags=["Vistas Temporales"])
     app.include_router(manifestaciones.router, prefix="/api/manifestaciones", tags=["Manifestaciones"])
     app.include_router(octavas.router, prefix="/api/octavas", tags=["Ley de la Octava"])
-    app.include_router(universo_imaginal.router, prefix="/api/universo-imaginal", tags=["Universo Imaginal"])
+    # app.include_router(universo_imaginal.router, prefix="/api/universo-imaginal", tags=["Universo Imaginal"])  # Depende de universo_processor (Phase 3)
     app.include_router(configuracion.router, prefix="/api/configuracion", tags=["Configuración"])
-    # app.include_router(calendario.router, prefix="/api/calendario", tags=["Calendario"])  # Comentado temporalmente
-    print("✅ Routers de agentes cargados correctamente")
+    
+    # ===== V2.0 ROUTERS (dependen de agentes archivados) =====
+    # from api import entrelazamiento, ritual_maghrib, estructura, espejo_diario
+    # app.include_router(entrelazamiento.router, prefix="/api", tags=["Entrelazamiento"])  # Usa analizador_patrones, entrelazador_dominios
+    # app.include_router(ritual_maghrib.router, prefix="/api/maghrib", tags=["Ritual Maghrib"])  # Usa entrelazador
+    # app.include_router(estructura.router, prefix="/api/estructura", tags=["Estructura"])  # Usa entrelazador
+    # app.include_router(espejo_diario.router, prefix="/api/espejo-diario", tags=["Espejo Diario"])  # Usa entrelazador
+    
+    # from api import calendario  # GoogleCalendarService pendiente
+    # app.include_router(calendario.router, prefix="/api/calendario", tags=["Calendario"])
+    
+    print("✅ Routers CORE cargados correctamente (8 routers)")
+    print("⚠️ 4 routers deshabilitados temporalmente (v2.0): entrelazamiento, ritual_maghrib, estructura, espejo_diario")
 except Exception as e:
     print(f"❌ Error cargando routers: {e}")
     import traceback

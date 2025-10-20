@@ -9,7 +9,7 @@ from fastapi import APIRouter, HTTPException, Query
 from typing import Optional
 import os
 
-from services.universo_processor import UniversoProcessor
+# from services.universo_processor import UniversoProcessor  # Archivado en Phase 3
 from models.universo import (
     UniversoImaginal, ObtenerEstrellasRequest, ObtenerOrbitasRequest,
     EstadisticasUniverso

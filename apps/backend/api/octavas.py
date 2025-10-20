@@ -10,7 +10,7 @@ from pydantic import BaseModel
 from datetime import date
 from typing import Optional
 
-from services.gestor_octavas import GestorOctavas
+# from services.gestor_octavas import  # Archivado en Phase 3 GestorOctavas
 from models.ley_octava import (
     ObjetivoOctava, DimensionOctava, TipoShock,
     DiaSemanaOctava, CORRESPONDENCIAS_OCTAVA
@@ -19,8 +19,9 @@ from models.ley_octava import (
 
 router = APIRouter()
 
-# Gestor global (en producción sería persistente en DB)
-gestor = GestorOctavas()
+# Gestor global (deshabilitado en MVP, feature v2.0)
+# gestor = GestorOctavas()
+gestor = None  # MVP: endpoints retornan datos estáticos/modelo
 
 
 class CrearObjetivoRequest(BaseModel):
