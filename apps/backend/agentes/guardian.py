@@ -5,13 +5,28 @@ from sqlalchemy.orm import Session
 
 from models.schemas import ReporteDiario
 from models.database import EstadoCeroDB, SesionDB, NoNegociableTrackingDB, BiometriaDB
+from models.decreto_sacral import DecretoSacral  # 🏛️ Arquitectura Sagrada
 from services.claude_client import ClaudeClient
 
 
 class AgenteGuardian:
     """
-    Agente Vigilante del Ciclo
-    Monitorea salud, genera reportes, detecta mejoras
+    🕌 AGENTE GUARDIAN - El Escribano (Sirr/Secreto)
+    
+    PODER JUDICIAL del gobierno del reino humano.
+    
+    Responsabilidades:
+    - VERIFICA que el decreto fue respetado
+    - REGISTRA la ejecución y resultados
+    - EXTRAE sabiduría del día (Espejo Nocturno)
+    - CIERRA el ciclo diario con integridad
+    
+    Arquitectura Sagrada:
+    - Parte de los 3 Poderes de Gobierno
+    - Verifica al Ejecutivo (Orquestador)
+    - Guarda la memoria sagrada del sistema
+    
+    Referencia: core/arquitectura/TRES_PODERES_GOBIERNO_DIVINO.md
     """
     
     def __init__(self, db: Session, claude: ClaudeClient):
@@ -20,14 +35,37 @@ class AgenteGuardian:
         
     async def generar_reporte_diario(self, fecha: date) -> ReporteDiario:
         """
-        Genera reporte diario ANTES de Maghrib
-        Cierra el día que termina
+        🕌 PODER JUDICIAL: Genera Espejo Nocturno
+        
+        VERIFICACIÓN COMPLETA:
+        1. Obtiene decreto del día
+        2. Recopila datos de ejecución
+        3. VERIFICA cumplimiento del decreto
+        4. Registra en decreto (observaciones)
+        5. Genera Espejo Nocturno (sabiduría)
+        
+        Se ejecuta ANTES de Maghrib para cerrar el día.
         """
+        # 1. Obtener decreto del día (si existe)
+        decreto = self.db.query(DecretoSacral).filter(
+            DecretoSacral.fecha == fecha,
+            DecretoSacral.esta_activo
+        ).first()
         
         # Recopilar datos del día
         datos = await self._recopilar_datos_dia(fecha)
         
-        # Generar contenido con Claude
+        # 2. VERIFICAR cumplimiento del decreto (si existe)
+        if decreto:
+            verificacion = await self._verificar_cumplimiento_decreto(decreto, datos)
+            datos["verificacion_decreto"] = verificacion
+        else:
+            datos["verificacion_decreto"] = {
+                "decreto_presente": False,
+                "mensaje": "No había decreto para hoy"
+            }
+        
+        # 3. Generar contenido con Claude
         contenido = await self._generar_contenido_reporte(datos)
         
         # Manejar estructura de respuesta de Claude
@@ -43,6 +81,26 @@ class AgenteGuardian:
             # Si es una lista, usar como resonancias
             resonancias = contenido[:3]  # Tomar las primeras 3
             obstrucciones = ["Sistema operativo"]
+        
+        # 4. REGISTRAR verificación en decreto (si existe)
+        if decreto:
+            observaciones = {
+                "verificacion_judicial": datos["verificacion_decreto"],
+                "espejo_nocturno": {
+                    "resonancias": resonancias,
+                    "obstrucciones": obstrucciones,
+                    "semilla_mañana": semilla
+                },
+                "timestamp": datetime.now().isoformat()
+            }
+            
+            decreto.observaciones_judiciales = json.dumps(observaciones, ensure_ascii=False, indent=2)
+            decreto.verificado_por_escribano = True
+            decreto.estado = "completado"
+            
+            self.db.commit()
+            
+            print(f"⚖️ PODER JUDICIAL: Decreto {decreto.id} verificado y cerrado")
         
         # Construir reporte
         return ReporteDiario(
@@ -225,3 +283,71 @@ TONO: Contemplativo, agradecido, honesto, curioso. Sin juicio.
                 "Buena consistencia en Estados Cero" if promedio_estados_dia > 2 else "Necesita más Estados Cero"
             ]
         }
+    
+    async def _verificar_cumplimiento_decreto(
+        self,
+        decreto: DecretoSacral,
+        datos_dia: Dict
+    ) -> Dict:
+        """
+        🕌 PODER JUDICIAL: Verifica cumplimiento del decreto
+        
+        Compara lo DECRETADO vs lo EJECUTADO.
+        
+        Args:
+            decreto: DecretoSacral del día
+            datos_dia: Datos recopilados del día
+            
+        Returns:
+            Dict con resultado de la verificación
+        """
+        # Análisis básico de cumplimiento
+        estados_cero = datos_dia.get("estados_cero_completados", 0)
+        sesiones = datos_dia.get("sesiones", 0)
+        no_neg_porcentaje = 0
+        
+        if datos_dia.get("no_neg_totales", 0) > 0:
+            no_neg_porcentaje = (
+                datos_dia["no_neg_cumplidos"] / datos_dia["no_neg_totales"]
+            ) * 100
+        
+        # Criterios de cumplimiento
+        cumplimiento_alto = (
+            estados_cero >= 1 and  # Al menos 1 Estado Cero
+            no_neg_porcentaje >= 70  # Al menos 70% de no-negociables
+        )
+        
+        cumplimiento_medio = (
+            estados_cero >= 1 or
+            no_neg_porcentaje >= 50
+        )
+        
+        if cumplimiento_alto:
+            nivel = "ALTO"
+            mensaje = "Decreto ejecutado con excelencia (Ihsān)"
+        elif cumplimiento_medio:
+            nivel = "MEDIO"
+            mensaje = "Decreto ejecutado parcialmente"
+        else:
+            nivel = "BAJO"
+            mensaje = "Decreto no ejecutado - requiere atención"
+        
+        verificacion = {
+            "decreto_presente": True,
+            "decreto_id": decreto.id,
+            "accion_decretada": decreto.accion_tangible,
+            "direccion_emergente": decreto.direccion_emergente,
+            "nivel_cumplimiento": nivel,
+            "mensaje": mensaje,
+            "metricas": {
+                "estados_cero": estados_cero,
+                "sesiones": sesiones,
+                "no_negociables_porcentaje": round(no_neg_porcentaje, 1)
+            }
+        }
+        
+        print(f"⚖️ VERIFICACIÓN JUDICIAL: {nivel}")
+        print(f"   Decreto: {decreto.accion_tangible}")
+        print(f"   Métricas: EC={estados_cero}, NN={no_neg_porcentaje:.0f}%")
+        
+        return verificacion
