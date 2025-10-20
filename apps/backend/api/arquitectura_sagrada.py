@@ -14,13 +14,15 @@ Referencia: carta_magna.md
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from datetime import date
+from datetime import date, datetime, timedelta
 from typing import Dict, Any
+import json
 
-from models.database import get_db
+from models.database import get_db, EstadoCeroDB
 from models.decreto_sacral import DecretoSacral
 from ministerios import obtener_gabinete
 from services.verificador_pilares import obtener_verificador
+from services.tiempos_liturgicos import CalculadorTiemposLiturgicos
 
 router = APIRouter()
 
@@ -115,6 +117,60 @@ async def dashboard_arquitectura_sagrada(db: Session = Depends(get_db)):
             separacion_poderes = "⚠️ Sin decreto - Sistema en espera"
         
         # =====================================================================
+        # CICLO DEL DÍA - Timeline de 3 Poderes
+        # =====================================================================
+        
+        # Calcular tiempos litúrgicos del día
+        try:
+            calculador = CalculadorTiemposLiturgicos(latitud=40.4168, longitud=-3.7038)  # Madrid por defecto
+            tiempos_dia = calculador.calcular_tiempos_hoy()
+            
+            ciclo_dia = {
+                "fajr": {
+                    "hora": tiempos_dia.fajr.inicio.strftime("%H:%M"),
+                    "poder": "LEGISLATIVO",
+                    "accion": "Estado Cero → Decreto Sacral",
+                    "completado": bool(decreto_hoy)
+                },
+                "dhuhr": {
+                    "hora": tiempos_dia.dhuhr.inicio.strftime("%H:%M"),
+                    "poder": "EJECUTIVO",
+                    "accion": "Revisión de jornada",
+                    "completado": bool(decreto_hoy and decreto_hoy.estado == "en_ejecucion")
+                },
+                "maghrib": {
+                    "hora": tiempos_dia.maghrib.inicio.strftime("%H:%M"),
+                    "poder": "JUDICIAL",
+                    "accion": "Espejo Nocturno → Verificación",
+                    "completado": bool(decreto_hoy and decreto_hoy.verificacion_judicial)
+                }
+            }
+        except Exception as e:
+            ciclo_dia = {
+                "error": f"No se pudieron calcular tiempos litúrgicos: {e}"
+            }
+        
+        # =====================================================================
+        # ESPEJO NOCTURNO (si existe)
+        # =====================================================================
+        
+        espejo_nocturno = None
+        if decreto_hoy and decreto_hoy.verificacion_judicial:
+            try:
+                observaciones = json.loads(decreto_hoy.observaciones_judiciales) if decreto_hoy.observaciones_judiciales else None
+                
+                if observaciones:
+                    espejo_nocturno = {
+                        "nivel_cumplimiento": observaciones.get("verificacion_judicial", {}).get("nivel_cumplimiento"),
+                        "mensaje": observaciones.get("verificacion_judicial", {}).get("mensaje"),
+                        "resonancias": observaciones.get("espejo_nocturno", {}).get("resonancias", []),
+                        "obstrucciones": observaciones.get("espejo_nocturno", {}).get("obstrucciones", []),
+                        "semilla_mañana": observaciones.get("espejo_nocturno", {}).get("semilla_mañana")
+                    }
+            except Exception as e:
+                espejo_nocturno = {"error": f"Error leyendo Espejo Nocturno: {e}"}
+        
+        # =====================================================================
         # 7 MINISTERIOS EXISTENCIALES
         # =====================================================================
         
@@ -179,9 +235,11 @@ async def dashboard_arquitectura_sagrada(db: Session = Depends(get_db)):
             "arquitectura_sagrada": {
                 "version": "1.0.0",
                 "estado": "Bajo la observabilidad divina",
-                "fecha": date.today().isoformat()
+                "fecha": date.today().isoformat(),
+                "hora_actual": datetime.now().strftime("%H:%M")
             },
             "unidad_del_ser": unidad_status,
+            "ciclo_dia": ciclo_dia,
             "pilares": pilares_status,
             "poderes": {
                 "separacion": separacion_poderes,
@@ -190,6 +248,7 @@ async def dashboard_arquitectura_sagrada(db: Session = Depends(get_db)):
                 "judicial": poderes_status["judicial"]
             },
             "ministerios": ministerios_status,
+            "espejo_nocturno": espejo_nocturno,
             "referencias": {
                 "carta_magna": "carta_magna.md",
                 "pilares": "core/pilares/",
