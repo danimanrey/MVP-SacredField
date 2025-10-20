@@ -1,131 +1,68 @@
-# 🌌 Campo Sagrado - Frontend Inmersivo (Puerto 3000)
+# 🌌 Campo Sagrado - Frontend
 
-**Next.js + TypeScript + React Three Fiber**
+Interface sagrada para el organismo tecnológico-espiritual del Entrelazador.
 
-## 🎯 Propósito
+## 📦 Estado Actual (post-consolidación 2025-10-20)
 
-Este es el **frontend de divulgación** del Campo Sagrado:
-- **Cara al cliente**: Experiencia pública y gratuita
-- **Inmersivo**: Estado Cero con visualización 3D
-- **Contemplativo**: Flujo guiado, meditativo
-- **Asombro**: Causa cuestionamiento y admiración
+**Frontend MVP v0.1** - Next.js con geometría sagrada y UI inmersiva.
 
-## 🚀 Inicio Rápido
+### Arquitectura
+
+```
+apps/frontend/
+├── app/                    # Pages App Router (Next.js 14)
+│   ├── estado-cero/        ✅ Estado Cero ritual (CORE MVP)
+│   ├── dashboard/          ✅ Dashboard principal
+│   ├── onboarding/         ✅ Onboarding del usuario
+│   ├── layout.tsx          ✅ Layout root con providers
+│   ├── page.tsx            ✅ Home page
+│   └── globals.css         ✅ Estilos Tailwind + geom. sagrada
+│
+├── lib/                    # Core libs
+│   ├── api-client.ts       ✅ Cliente API con tipos TypeScript
+│   ├── store.ts            ✅ Store Zustand (estado global)
+│   ├── sacred-geometry.ts  ✅ Generadores de geometría sagrada
+│   └── types.ts            ✅ Tipos compartidos
+│
+└── components/             # Componentes UI (en desarrollo)
+    └── ...                 🔄 Componentes reutilizables
+```
+
+### Páginas Activas (3 MVP Core)
+
+1. **Estado Cero** (`/estado-cero`) - Ritual sagrado de consulta con IA
+   - Pregunta binaria contextual (Claude AI)
+   - Respuesta sacral (Sí/No/No ahora)
+   - Documentación automática en Obsidian
+   - Geometría sagrada animada (Framer Motion)
+
+2. **Dashboard** (`/dashboard`) - Vista principal del usuario
+   - Tiempos litúrgicos del día
+   - Manifestaciones activas
+   - Estado del sistema
+   - Calendario Hijri de 13 meses
+
+3. **Onboarding** (`/onboarding`) - Configuración inicial
+   - Paso 1: Fundamentos (non-negotiables litúrgicos)
+   - Paso 2: Dimensiones prioritarias
+   - Paso 3: Contexto financiero/biológico
+   - Paso 4: Expresión libre del prisma personal
+
+### Página Archivada (1 experimental v2.0)
+
+- **Estado Cero Inmersivo** (`/estado-cero-inmersivo`) - Versión con Three.js
+  - Archivado en `archive/frontend-experimental/2025-10-20/`
+  - Recuperable para v2.0 con experiencia 3D completa
+
+## 🚀 Iniciar Frontend
 
 ```bash
+cd apps/frontend
+
 # Instalar dependencias
 npm install
 
-# Iniciar en modo desarrollo (puerto 3000)
-npm run dev
-
-# Abrir en navegador
-open http://localhost:3000
-```
-
-## 🏗️ Estructura
-
-```
-app/
-├── page.tsx                    # Landing inmersivo
-├── estado-cero/
-│   ├── page.tsx                # Estado Cero principal
-│   └── components/
-│       ├── UniversoEsferico.tsx # Visualización 3D
-│       └── PreguntasSacrales.tsx # Preguntas binarias
-├── validacion/                 # Validar actividades (TODO)
-├── layout.tsx                  # Layout principal
-└── globals.css                 # Estilos globales
-
-lib/
-├── api-client.ts               # Cliente del backend
-└── stores/
-    └── estado-cero-store.ts    # Store Zustand
-```
-
-## 🎨 Stack Tecnológico
-
-- **Next.js 14**: Framework React con App Router
-- **TypeScript**: Type safety
-- **React Three Fiber**: 3D con Three.js
-- **@react-three/drei**: Helpers para R3F
-- **Framer Motion**: Animaciones fluidas
-- **Zustand**: State management
-- **Tailwind CSS**: Estilos utilitarios
-
-## 🌊 Flujo de Usuario
-
-```
-1. Landing (page.tsx)
-   ↓
-2. Click "Entrar al Estado Cero"
-   ↓
-3. Meditación entrada (3s)
-   ↓
-4. Meditación expansión (3s)
-   ↓
-5. Backend: Iniciar Estado Cero
-   ↓
-6. Preguntas sacrales (6 preguntas)
-   ↓
-7. Síntesis de dirección
-   ↓
-8. Mostrar dirección emergente
-   ↓
-9. Redirigir a /validacion
-```
-
-## 🎯 Diferencias con Puerto 5173
-
-| Aspecto | Puerto 3000 (Next.js) | Puerto 5173 (Svelte) |
-|---------|----------------------|---------------------|
-| **Propósito** | Divulgación | Ejecución |
-| **Usuario** | Cliente/Público | Usuario registrado |
-| **Tono** | Contemplativo | Táctico |
-| **Visuales** | 3D inmersivo | Dashboard ejecutivo |
-| **Flujo** | Guiado | Libre navegación |
-| **Estado Cero** | ✅ SÍ (inmersivo) | ❌ NO (solo ver) |
-| **Espejo Diario** | ❌ NO | ✅ SÍ (gestión) |
-
-## 🔌 Conexión con Backend
-
-El frontend se conecta al backend en `http://localhost:8000`:
-
-```typescript
-// lib/api-client.ts
-const API_BASE = 'http://localhost:8000/api'
-
-// Endpoints usados:
-- POST /estado-cero/verificar
-- POST /estado-cero/iniciar
-- POST /estado-cero/{id}/responder
-- POST /estado-cero/{id}/sintetizar
-- POST /estado-cero/{id}/finalizar
-```
-
-## 🎨 Colores del Universo
-
-```css
---universo: #0a0a1e          /* Fondo oscuro */
---purpura-mistico: #8B5CF6   /* Primario */
---azul-estelar: #3B82F6      /* Secundario */
---verde-vida: #22C55E         /* Acento */
-```
-
-## 📝 TODO
-
-- [ ] Página de validación de actividades
-- [ ] Onboarding de configuración
-- [ ] Chat clarificador
-- [ ] Audio generativo (Tone.js)
-- [ ] Animaciones avanzadas
-- [ ] Responsive móvil optimizado
-- [ ] PWA capabilities
-
-## 🐛 Debugging
-
-```bash
-# Ver logs en tiempo real
+# Iniciar dev server
 npm run dev
 
 # Build para producción
@@ -135,14 +72,131 @@ npm run build
 npm start
 ```
 
-## 🔗 Enlaces
+El frontend estará disponible en `http://localhost:3000`
 
-- **Este puerto**: http://localhost:3000
-- **Backend**: http://localhost:8000
-- **Puerto ejecutivo**: http://localhost:5173
-- **Docs API**: http://localhost:8000/docs
+## 🛠️ Tecnologías
+
+- **Next.js 14** - React framework con App Router
+- **TypeScript 5** - Tipado estático
+- **Tailwind CSS 3** - Utility-first CSS
+- **Framer Motion** - Animaciones fluidas
+- **Zustand** - State management ligero
+- **Lucide React** - Iconos modernos
+
+### En consideración (v2.0):
+
+- **Three.js** - Gráficos 3D para universo imaginal
+- **React Three Fiber** - React renderer para Three.js
+- **@react-three/drei** - Helpers para R3F
+
+## 📖 Integración Backend
+
+Cliente API en `lib/api-client.ts` con endpoints typed:
+
+```typescript
+import { estadoCeroAPI, configuracionAPI } from '@/lib/api-client'
+
+// Estado Cero
+const pregunta = await estadoCeroAPI.obtenerPregunta()
+await estadoCeroAPI.responder(pregunta.id, 'si')
+
+// Configuración
+const config = await configuracionAPI.obtener()
+await configuracionAPI.guardar(updatedConfig)
+```
+
+**API Base URL**: `http://localhost:8000/api` (configurable en `.env.local`)
+
+## 🎨 Geometría Sagrada
+
+Componentes con patrones geométricos sagrados:
+
+- **Flor de la Vida** - Símbolo de creación y unidad
+- **Vesica Piscis** - Intersección de dualidades
+- **Metatron's Cube** - Geometría del orden divino
+- **Torus** - Flujo de energía continuo
+
+Implementación en `lib/sacred-geometry.ts` con SVG paths generados programáticamente.
+
+## 🧪 Testing
+
+```bash
+# ESLint (type checking + linting)
+npm run lint
+
+# Tests unitarios (cuando implementados)
+npm run test
+
+# E2E tests (cuando implementados)
+npm run test:e2e
+```
+
+## 📊 Métricas
+
+**Consolidación 2025-10-20:**
+
+- **Páginas**: 4 (3 MVP + 1 archivada)
+- **ESLint Issues**: 300 total (209 errors, 91 warnings)
+  - 🔄 En corrección activa (90% son tipos faltantes)
+- **Código archivado**: ~1,200 LoC (estado-cero-inmersivo)
+- **Build Status**: ✅ Funcional (con warnings de tipos)
+
+**Próximas correcciones ESLint:**
+
+1. Añadir tipos a props de componentes
+2. Corregir `any` types implícitos
+3. Actualizar tipos de eventos
+4. Validar tipos de retorno
+
+## 🗂️ Código Archivado
+
+Experimental v2.0 preservado en:
+
+```
+archive/
+└── frontend-experimental/2025-10-20/
+    └── estado-cero-inmersivo/  # Versión 3D con Three.js
+        └── README.md           # Instrucciones de restauración
+```
+
+## 🎭 Geometría Sagrada & UI
+
+**Principios de diseño:**
+
+- **Al borde del caos**: 40% del espacio sin asignar
+- **Respeto sacral**: UI no invasiva, espacios contemplativos
+- **Geometría viva**: Animaciones sutiles, patrones emergentes
+- **Tiempos litúrgicos**: UI adapta colores según hora del día
+
+**Paleta de colores** (Tailwind extend):
+
+```javascript
+colors: {
+  sacral: {
+    dawn: '#FDB29B',    // Fajr (alba)
+    noon: '#FCD34D',    // Dhuhr (mediodía)
+    afternoon: '#F59E0B', // Asr (tarde)
+    dusk: '#7C3AED',    // Maghrib (ocaso)
+    night: '#3730A3'    // Isha (noche)
+  }
+}
+```
+
+## 📝 Próximos Pasos
+
+1. ✅ **Consolidación completada** (2025-10-20)
+2. 🔄 **Corrección ESLint** (en progreso - Phase 2 original)
+3. ⏸️ **Componentes UI reutilizables** (pendiente)
+4. ⏸️ **Tests E2E** (pendiente)
+5. ⏸️ **Deploy Vercel** (pendiente)
+
+## 📚 Documentación Adicional
+
+- [Auditoría Consolidación](/docs/auditoria/consolidacion-2025-10-20.md)
+- [Plan de Consolidación](/PLAN_CONSOLIDACION_EJECUTABLE.md)
+- [Handoff Completo](/handoff.md)
+- [Guía de Usuario](/docs/GUIA_USUARIO_COMPLETA.md)
 
 ---
 
-**إن شاء الله - Si Dios quiere 🕌✨**
-
+**إن شاء الله** - Interface sagrada, geometría emergente.
