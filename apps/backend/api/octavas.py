@@ -10,7 +10,7 @@ from pydantic import BaseModel
 from datetime import date
 from typing import Optional
 
-from services.gestor_octavas import GestorOctavas
+# from services.gestor_octavas import  # Archivado en Phase 3 GestorOctavas
 from models.ley_octava import (
     ObjetivoOctava, DimensionOctava, TipoShock,
     DiaSemanaOctava, CORRESPONDENCIAS_OCTAVA
