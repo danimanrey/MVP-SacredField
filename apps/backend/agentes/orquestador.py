@@ -12,11 +12,29 @@ from models.schemas import (
 from services.claude_client import ClaudeClient
 from services.tiempos_liturgicos import CalculadorTiemposLiturgicos
 
+# 🏛️ Arquitectura Sagrada: Gabinete Ministerial
+from ministerios import obtener_gabinete
+
 
 class AgenteOrquestador:
     """
-    Agente Maestro de la Sinfonía
-    Orquesta la jornada al borde del caos
+    🎼 AGENTE ORQUESTADOR - El Primer Ministro (Aql)
+    
+    PODER EJECUTIVO del gobierno del reino humano.
+    
+    Responsabilidades:
+    - RECIBE decreto del Sultán (Estado Cero)
+    - CONSULTA con los 7 Ministerios
+    - ORGANIZA la jornada al borde del caos
+    - COORDINA recursos y tiempos
+    - EJECUTA con Ihsān (excelencia)
+    
+    Arquitectura Sagrada:
+    - Parte de los 3 Poderes de Gobierno
+    - Opera EN los 7 Ministerios
+    - Sirve al decreto del Sultán sin cuestionarlo
+    
+    Referencia: core/arquitectura/TRES_PODERES_GOBIERNO_DIVINO.md
     """
     
     def __init__(
@@ -29,6 +47,37 @@ class AgenteOrquestador:
         self.claude = claude
         self.calculador_tiempos = calculador_tiempos
         self.plan_actual: Optional[JornadaAlBordeCaos] = None
+        
+        # 🏛️ Gabinete Ministerial (arquitectura sagrada)
+        self.gabinete = obtener_gabinete()
+        self._registrar_ministerios()
+    
+    def _registrar_ministerios(self):
+        """
+        Registra los 7 ministerios en el gabinete.
+        
+        NOTA: Registro lazy para evitar dependencias circulares.
+        Solo registramos ministerios al momento de usarlos.
+        """
+        try:
+            from ministerios.mente import MinisterioMente
+            from ministerios.cuerpo import MinisterioCuerpo
+            from ministerios.capital import MinisterioCapital
+            from ministerios.conexion import MinisterioConexion
+            from ministerios.creacion import MinisterioCreacion
+            from ministerios.significado import MinisterioSignificado
+            from ministerios.soberania import MinisterioSoberania
+            
+            self.gabinete.registrar_ministerio("mente", MinisterioMente())
+            self.gabinete.registrar_ministerio("cuerpo", MinisterioCuerpo())
+            self.gabinete.registrar_ministerio("capital", MinisterioCapital())
+            self.gabinete.registrar_ministerio("conexion", MinisterioConexion())
+            self.gabinete.registrar_ministerio("creacion", MinisterioCreacion())
+            self.gabinete.registrar_ministerio("significado", MinisterioSignificado())
+            self.gabinete.registrar_ministerio("soberania", MinisterioSoberania())
+        except Exception as e:
+            # Si falla, continuar sin ministerios (backwards compatibility)
+            print(f"⚠️ No se pudieron registrar ministerios: {e}")
     
     async def actualizar_espejo_con_estado_cero(
         self,
