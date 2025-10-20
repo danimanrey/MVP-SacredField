@@ -58,5 +58,8 @@ Icon
 
 # === Backups y migración Git ===
 .git-backup-*
+.git-old-problematic/
 *.bundle
 git-status-backup.txt
+GIT_MIGRATION_PLAN.md
+GIT_FRESH_START.md
