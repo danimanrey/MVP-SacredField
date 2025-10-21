@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic'
 import { useEstadoCeroStore } from '@/lib/stores/estado-cero-store'
 import { estadoCeroAPI, RespuestaSacral } from '@/lib/api-client'
 import { obtenerTextosMomento, obtenerConfigMomento } from '@/lib/momento-config'
+import { useAudioSagrado } from '@/lib/audio-sagrado'
 import PreguntasSacrales from './components/PreguntasSacrales'
 
 // Importar UniversoEsferico dinámicamente (solo cliente)
@@ -35,6 +36,9 @@ export default function EstadoCeroPage() {
   const [faseVisual, setFaseVisual] = useState<FaseVisual>('entrada')
   const [mostrarBotonIniciar, setMostrarBotonIniciar] = useState(false)
   const [momentoActual, setMomentoActual] = useState('')
+  
+  // Audio Sagrado
+  const audio = useAudioSagrado()
 
   useEffect(() => {
     verificarYPrepararEstadoCero()
@@ -69,23 +73,39 @@ export default function EstadoCeroPage() {
     setError(null)
 
     try {
+      // 🎵 Sonido inicial
+      audio.playTransicion('inicio')
+      
       // Fase de entrada (3 segundos)
       setFase('entrada')
       setFaseVisual('entrada')
       await delay(3000)
 
       // Fase de expansión (3 segundos)
+      audio.playTransicion('avance')
       setFase('expansion')
       setFaseVisual('expansion')
+      
+      // 🎵 Comenzar ambiente del momento litúrgico
+      audio.playAmbiente(momentoActual, 30)
+      
       await delay(3000)
 
       // Iniciar Estado Cero en backend con el momento ACTUAL
       console.info('🔮 Iniciando Estado Cero para momento:', momentoActual)
       const estadoIniciado = await estadoCeroAPI.iniciar(momentoActual, true)
       console.info('✅ Estado Cero iniciado:', estadoIniciado)
-      setEstadoActual(estadoIniciado)
+      
+      // Normalizar el objeto: backend retorna estado_cero_id, frontend espera id
+      const estadoNormalizado = {
+        ...estadoIniciado,
+        id: estadoIniciado.estado_cero_id || estadoIniciado.id
+      }
+      
+      setEstadoActual(estadoNormalizado)
 
       // Pasar a preguntas
+      audio.playTransicion('avance')
       setFase('preguntas')
       setFaseVisual('preguntas')
     } catch (err: unknown) {
@@ -93,6 +113,7 @@ export default function EstadoCeroPage() {
       const errorMsg = err instanceof Error ? err.message : String(err)
       setError(errorMsg || 'Error desconocido al iniciar')
       setFase('pre-inicio')
+      audio.stop()
     } finally {
       setCargando(false)
     }
@@ -114,6 +135,9 @@ export default function EstadoCeroPage() {
         await estadoCeroAPI.responder(estadoActual.id, respuesta)
       }
 
+      // 🎵 Sonido de transición a síntesis
+      audio.playTransicion('completado')
+      
       // Cambiar a fase de síntesis visual
       setFase('sintesis')
       setFaseVisual('sintesis')
@@ -128,15 +152,22 @@ export default function EstadoCeroPage() {
       const direccionTexto = resultado.direccion || resultado.direccion_emergente || 'Dirección emergente procesándose...'
       setDireccion(direccionTexto)
 
+      // 🎵 Pulsación profunda durante la reflexión
+      audio.playPulsacion(5)
+
       // Mostrar dirección
       await delay(5000)
 
       // Completar
       setFase('completado')
+      
+      // 🎵 Detener audio al completar
+      setTimeout(() => audio.stop(), 2000)
     } catch (err: unknown) {
       console.error('❌ Error procesando respuestas:', err)
       const errorMsg = err instanceof Error ? err.message : String(err)
       setError(errorMsg || 'Error procesando respuestas')
+      audio.stop()
     } finally {
       setCargando(false)
     }
@@ -189,16 +220,24 @@ export default function EstadoCeroPage() {
           {fase === 'pre-inicio' && (
             <motion.div
               key="pre-inicio"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.05 }}
+              transition={{ 
+                duration: 0.8, 
+                ease: [0.22, 1, 0.36, 1] // Cubic bezier suave
+              }}
               className="text-center"
             >
               <motion.h1
                 className="text-5xl md:text-7xl font-light mb-6"
-                initial={{ y: 20, opacity: 0 }}
+                initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.5 }}
+                transition={{ 
+                  delay: 0.3, 
+                  duration: 1,
+                  ease: [0.22, 1, 0.36, 1]
+                }}
               >
                 {textos.pre_inicio.titulo}
               </motion.h1>
@@ -228,13 +267,46 @@ export default function EstadoCeroPage() {
                 <motion.button
                   onClick={iniciarMeditacion}
                   disabled={cargando}
-                  className="px-12 py-6 text-xl bg-gradient-to-r from-purpura-mistico to-azul-estelar rounded-full hover:shadow-2xl hover:shadow-purpura-mistico/50 transition-all disabled:opacity-50"
+                  className="relative px-12 py-6 text-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 rounded-full overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 20
+                  }}
                 >
-                  {cargando ? 'Preparando el espacio...' : 'Entrar al Estado Cero'}
+                  {/* Efecto de brillo animado */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                    initial={{ x: '-100%' }}
+                    animate={{ x: '200%' }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 3,
+                      ease: "linear"
+                    }}
+                  />
+                  
+                  {/* Resplandor pulsante */}
+                  <motion.div
+                    className="absolute inset-0 bg-purple-500/20 blur-xl"
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0.5, 0.8, 0.5]
+                    }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 2,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  
+                  <span className="relative z-10">
+                    {cargando ? 'Preparando el espacio...' : 'Entrar al Estado Cero'}
+                  </span>
                 </motion.button>
               )}
             </motion.div>
@@ -244,23 +316,47 @@ export default function EstadoCeroPage() {
           {fase === 'entrada' && (
             <motion.div
               key="entrada"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.1 }}
+              transition={{ 
+                duration: 1.2, 
+                ease: [0.22, 1, 0.36, 1] 
+              }}
               className="text-center"
             >
+              <motion.div
+                className="text-7xl mb-6"
+                animate={{ 
+                  rotate: [0, 360],
+                  scale: [1, 1.2, 1]
+                }}
+                transition={{ 
+                  duration: 3, 
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                {textos.entrada.emoji}
+              </motion.div>
+              
               <motion.h2
                 className="text-4xl md:text-5xl font-light mb-4"
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 3, repeat: Infinity }}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
               >
                 {textos.entrada.titulo}
               </motion.h2>
+              
               <motion.p
                 className="text-xl text-gray-300"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
+                animate={{ opacity: [0, 1, 0.7, 1] }}
+                transition={{ 
+                  delay: 0.8,
+                  duration: 1.5
+                }}
               >
                 {textos.entrada.subtitulo}
               </motion.p>
@@ -271,23 +367,64 @@ export default function EstadoCeroPage() {
           {fase === 'expansion' && (
             <motion.div
               key="expansion"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.2 }}
+              transition={{ 
+                duration: 1.5, 
+                ease: [0.22, 1, 0.36, 1] 
+              }}
               className="text-center"
             >
+              {/* Círculo expandiéndose */}
+              <motion.div
+                className="mx-auto mb-8 w-32 h-32 rounded-full border-2 border-purple-500/30 flex items-center justify-center"
+                animate={{ 
+                  scale: [1, 1.5, 1],
+                  borderColor: [
+                    'rgba(168, 85, 247, 0.3)',
+                    'rgba(168, 85, 247, 0.8)',
+                    'rgba(168, 85, 247, 0.3)'
+                  ]
+                }}
+                transition={{ 
+                  duration: 3, 
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <motion.div
+                  className="text-5xl"
+                  animate={{ 
+                    scale: [1, 0.8, 1]
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  🌟
+                </motion.div>
+              </motion.div>
+              
               <motion.h2
                 className="text-4xl md:text-5xl font-light mb-4"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 3, repeat: Infinity }}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
               >
                 {textos.expansion.titulo}
               </motion.h2>
+              
               <motion.p
                 className="text-xl text-gray-300"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
+                animate={{ opacity: [0, 1, 0.7, 1] }}
+                transition={{ 
+                  delay: 1,
+                  duration: 1.5
+                }}
               >
                 {textos.expansion.subtitulo}
               </motion.p>
