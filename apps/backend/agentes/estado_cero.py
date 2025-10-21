@@ -108,69 +108,129 @@ class AgenteEstadoCero:
         contexto: ContextoCompleto
     ) -> List[PreguntaBinaria]:
         """
-        🔥 NUEVA IMPLEMENTACIÓN: Usa GeneradorPreguntas7Capas directamente
-
-        Genera 1 PREGUNTA EMERGENTE única basada en sistema de 7 capas
-        (no 3-6 preguntas genéricas del sistema antiguo)
+        🔺 LEY DEL TRES: Genera 3 preguntas alineadas con las 3 fuerzas fundamentales
+        
+        1. FUERZA ACTIVA (Afirmativa/Expansiva) - ¿Qué quiere emerger?
+        2. FUERZA PASIVA (Receptiva/Restrictiva) - ¿Qué necesita ser honrado?
+        3. FUERZA NEUTRALIZADORA (Reconciliadora) - ¿Cuál es el siguiente paso concreto?
+        
+        Esto honra los 3 Poderes de Gobierno, los 3 Centros, y la Ley del Tres de Gurdjieff.
         """
-        from services.generador_preguntas_7_capas import GeneradorPreguntas7Capas
-
+        momento = contexto.temporal.momento_liturgico.value
+        energia = contexto.biologico.energia_actual
+        
         try:
-            # Usar generador de 7 capas para crear pregunta emergente
-            generador = GeneradorPreguntas7Capas()
+            # Usar Claude para generar 3 preguntas contextuales basadas en la Ley del Tres
+            prompt = f"""Eres el Sultán del Campo Sagrado, formulando una consulta sacral en el momento litúrgico de {momento}.
 
-            # Extraer parámetros del contexto
-            momento = contexto.temporal.momento_liturgico.value
-            energia = contexto.biologico.energia_actual
+CONTEXTO:
+- Momento: {momento}
+- Energía actual: {energia}/5
+- Día: {contexto.temporal.dia_semana}
+- Mes Hijri: {contexto.temporal.mes_hijri}
 
-            # NOTA: El generador llama internamente a obtener_contexto_7_capas
-            # con los parámetros que le pasemos
-            resultado = generador.generar_pregunta_unica(
-                momento=momento,
-                energia=energia
+TAREA:
+Genera EXACTAMENTE 3 preguntas binarias (respuesta SÍ/NO) siguiendo la LEY DEL TRES:
+
+1. FUERZA ACTIVA (Expansión): Pregunta sobre lo que quiere EMERGER o manifestarse ahora
+2. FUERZA PASIVA (Receptividad): Pregunta sobre lo que necesita ser HONRADO o respetado
+3. FUERZA NEUTRALIZADORA (Acción): Pregunta sobre el PASO CONCRETO a tomar hoy
+
+ESTILO:
+- Profundas pero claras
+- Conectadas al cuerpo (autoridad sacral)
+- Específicas al momento actual
+- Respetando el contexto energético
+
+Retorna SOLO las 3 preguntas en formato JSON:
+{{
+  "preguntas": [
+    {{"texto": "pregunta 1 (fuerza activa)", "fuerza": "activa"}},
+    {{"texto": "pregunta 2 (fuerza pasiva)", "fuerza": "pasiva"}},
+    {{"texto": "pregunta 3 (fuerza neutralizadora)", "fuerza": "neutralizadora"}}
+  ]
+}}"""
+
+            # Llamar a Claude
+            respuesta = await self.claude.generar_texto(
+                prompt=prompt,
+                max_tokens=800,
+                temperature=0.8
             )
-
-            # El resultado tiene la estructura:
-            # {
-            #   "pregunta": str,
-            #   "contexto": str,
-            #   "tipo": str,
-            #   "dominios": List[str],
-            #   "patron_detectado": str,
-            #   "contexto_7_capas": {
-            #     "capas_activas": List[str],
-            #     "num_capas_activas": int,
-            #     "sintesis_narrativa": str,
-            #     "dominios_relevantes": List[str]
-            #   }
-            # }
-
-            # Convertir a formato PreguntaBinaria (schema legacy)
-            num_capas = resultado.get("contexto_7_capas", {}).get("num_capas_activas", 0)
-            dominios = resultado.get("dominios", [])
-
-            pregunta_emergente = PreguntaBinaria(
-                id="p1",
-                pregunta=resultado["pregunta"],
-                contexto=f"{num_capas} capas activas: {', '.join(dominios)}" if dominios else resultado.get("contexto", "Pregunta emergente"),
-                categoria=dominios[0] if dominios else "desarrollo"
-            )
-
-            # Retornar SOLO 1 pregunta emergente (no 3-6)
-            return [pregunta_emergente]
-
+            
+            # Parsear respuesta JSON
+            import json
+            try:
+                data = json.loads(respuesta)
+                preguntas_raw = data.get("preguntas", [])
+            except:
+                # Si falla JSON, extraer preguntas del texto
+                preguntas_raw = [
+                    {"texto": line.split(". ", 1)[1] if ". " in line else line, "fuerza": "activa"}
+                    for line in respuesta.split("\n") 
+                    if line.strip() and any(c in line for c in ["?", "¿"])
+                ][:3]
+            
+            # Convertir a formato PreguntaBinaria
+            preguntas = []
+            fuerzas_labels = {
+                "activa": "🔺 Fuerza Activa",
+                "pasiva": "🔻 Fuerza Pasiva", 
+                "neutralizadora": "⚖️ Fuerza Neutralizadora"
+            }
+            
+            for i, p in enumerate(preguntas_raw[:3]):  # Asegurar máximo 3
+                fuerza = p.get("fuerza", ["activa", "pasiva", "neutralizadora"][i])
+                preguntas.append(PreguntaBinaria(
+                    id=f"p{i+1}",
+                    pregunta=p.get("texto", p.get("pregunta", "Pregunta no disponible")),
+                    contexto=fuerzas_labels.get(fuerza, "Ley del Tres"),
+                    categoria=momento
+                ))
+            
+            # Si no se generaron 3, completar con fallback
+            while len(preguntas) < 3:
+                idx = len(preguntas)
+                fallbacks = [
+                    "¿Tu cuerpo se expande al seguir la dirección que emerge de este momento?",
+                    "¿Hay algo que necesite ser honrado antes de actuar?",
+                    "¿El siguiente paso es claro y tangible?"
+                ]
+                preguntas.append(PreguntaBinaria(
+                    id=f"p{idx+1}",
+                    pregunta=fallbacks[idx],
+                    contexto=f"Ley del Tres - Pregunta {idx+1}",
+                    categoria=momento
+                ))
+            
+            return preguntas[:3]  # Exactamente 3 preguntas
+            
         except Exception as e:
-            print(f"⚠️ Error generando pregunta con 7 capas: {e}")
+            print(f"⚠️ Error generando 3 preguntas: {e}")
             import traceback
             traceback.print_exc()
 
-            # Fallback: pregunta genérica
-            return [PreguntaBinaria(
-                id="p1",
-                pregunta="¿Tu cuerpo se expande al seguir la dirección que emerge de este momento?",
-                contexto="Pregunta fallback",
-                categoria="desarrollo"
-            )]
+            # Fallback: 3 preguntas genéricas basadas en Ley del Tres
+            return [
+                PreguntaBinaria(
+                    id="p1",
+                    pregunta="¿Tu cuerpo se expande al seguir la dirección que emerge de este momento?",
+                    contexto="🔺 Fuerza Activa - Emergencia",
+                    categoria=momento
+                ),
+                PreguntaBinaria(
+                    id="p2",
+                    pregunta="¿Hay límites o compromisos que necesitan ser honrados primero?",
+                    contexto="🔻 Fuerza Pasiva - Receptividad",
+                    categoria=momento
+                ),
+                PreguntaBinaria(
+                    id="p3",
+                    pregunta="¿El siguiente paso concreto está claro y alineado?",
+                    contexto="⚖️ Fuerza Neutralizadora - Acción",
+                    categoria=momento
+                )
+            ]
     
     def _generar_preguntas_genericas(self, contexto) -> list:
         """Genera preguntas genéricas como fallback"""
