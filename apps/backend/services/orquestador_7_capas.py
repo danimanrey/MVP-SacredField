@@ -27,7 +27,7 @@ from models.diseno_humano import crear_diseno_daniel, cargar_diseno_desde_config
 from models.estado_emocional import EstadoEmocional, TrackerEmocional, EstadoEmocionalTipo
 from models.contexto_social import cargar_contexto_social_desde_config
 from models.tipologia_cognitiva import crear_perfil_entp_5w4, cargar_perfil_cognitivo_desde_config
-from services.calculador_cosmico import obtener_contexto_cosmico
+# from services.calculador_cosmico import obtener_contexto_cosmico  # Archivado en Phase 3
 
 
 class Orquestador7Capas:
@@ -309,20 +309,26 @@ class Orquestador7Capas:
         self,
         fecha_hora: Optional[datetime] = None
     ) -> Dict:
-        """CAPA 7: Contexto astronómico/astrológico"""
-        contexto = obtener_contexto_cosmico(
-            latitud=self.latitud,
-            longitud=self.longitud,
-            fecha_hora=fecha_hora
-        )
-
-        fase_lunar = contexto["fase_lunar"]["fase"]
-        hora_planetaria = contexto["hora_planetaria"]["planeta"]
-
-        contexto["activa"] = (
-            fase_lunar in ["Luna Nueva", "Luna Llena"] or
-            hora_planetaria in ["Saturno", "Júpiter", "Sol"]
-        )
+        """CAPA 7: Contexto astronómico/astrológico (stub MVP)"""
+        # Stub simplificado - calculador_cosmico archivado en Phase 3
+        # Retorna contexto básico para mantener compatibilidad
+        
+        contexto = {
+            "fase_lunar": {
+                "fase": "Creciente",
+                "iluminacion": 0.5,
+                "cualidad": "Expansión"
+            },
+            "hora_planetaria": {
+                "planeta": "Mercurio",
+                "cualidad": "Comunicación"
+            },
+            "posicion_solar": {
+                "signo": "Libra",
+                "estacion": "Otoño"
+            },
+            "activa": False  # Por defecto no activa en MVP
+        }
 
         return contexto
 
